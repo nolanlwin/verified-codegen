@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/7ca78cf7c386/implementation.dfy(4,31): Error: index out of range
+  |
+4 |   if i == |s| then false else s[i] == c || ContainsChar(s, c, i + 1)
+  |                                ^
+
+.vericode/bench/humaneval/sessions/7ca78cf7c386/implementation.dfy(10,49): Error: index out of range
+   |
+10 |   if i == |s0| then true else ContainsChar(s1, s0[i], 0) && AllCharsIn(s0, s1, i + 1)
+   |                                                  ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

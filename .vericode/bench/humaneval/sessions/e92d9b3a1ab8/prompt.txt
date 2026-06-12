@@ -1,0 +1,26 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def prime_fib(n: int):
+    """
+    prime_fib returns n-th number that is a Fibonacci number and it's also prime.
+    >>> prime_fib(1)
+    2
+    >>> prime_fib(2)
+    3
+    >>> prime_fib(3)
+    5
+    >>> prime_fib(4)
+    13
+    >>> prime_fib(5)
+    89
+    """
+
+Requirements:
+- The main Dafny method must be named `prime_fib` (PascalCase `PrimeFib` is OK).
+- Define a pure recursive `function PrimeFibSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == PrimeFibSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `prime_fib`.

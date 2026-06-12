@@ -1,0 +1,11 @@
+.vericode/bench/humaneval/sessions/386501f14020/implementation.dfy(36,22): Error: arguments must have comparable types (got char and string)
+   |
+36 |   (i == 0 || s[i - 1] == " ") &&
+   |                       ^^
+
+.vericode/bench/humaneval/sessions/386501f14020/implementation.dfy(37,38): Error: arguments must have comparable types (got char and string)
+   |
+37 |   (i + |word| == |s| || s[i + |word|] == " ")
+   |                                       ^^
+
+2 resolution/type errors detected in implementation.dfy

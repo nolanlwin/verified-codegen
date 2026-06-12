@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def derivative(xs: list):
+    """ xs represent coefficients of a polynomial.
+    xs[0] + xs[1] * x + xs[2] * x^2 + ....
+     Return derivative of this polynomial in the same form.
+    >>> derivative([3, 1, 2, 4, 5])
+    [1, 4, 12, 20]
+    >>> derivative([1, 2, 3])
+    [2, 6]
+    """
+
+Requirements:
+- The main Dafny method must be named `derivative` (PascalCase `Derivative` is OK).
+- Define a pure recursive `function DerivativeSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == DerivativeSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `derivative`.

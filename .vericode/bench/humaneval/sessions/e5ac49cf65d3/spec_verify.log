@@ -1,0 +1,6 @@
+.vericode/bench/humaneval/sessions/e5ac49cf65d3/internal_spec.dfy(23,9): Error: Function body type mismatch (expected (real, real), got int)
+   |
+23 | function FindClosestElementsSpec(numbers: seq<real>): (real, real)
+   |          ^^^^^^^^^^^^^^^^^^^^^^^
+
+1 resolution/type errors detected in internal_spec.dfy

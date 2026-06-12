@@ -1,0 +1,23 @@
+Implement the following Python function with verified Dafny code.
+
+
+def unique_digits(x):
+    """Given a list of positive integers x. return a sorted list of all 
+    elements that hasn't any even digit.
+
+    Note: Returned list should be sorted in increasing order.
+    
+    For example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+
+Requirements:
+- The main Dafny method must be named `unique_digits` (PascalCase `UniqueDigits` is OK).
+- Define a pure recursive `function UniqueDigitsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == UniqueDigitsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `unique_digits`.

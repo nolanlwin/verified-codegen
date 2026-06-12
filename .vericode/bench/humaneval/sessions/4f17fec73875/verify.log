@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/4f17fec73875/implementation.dfy(7,5): Error: index out of range
+  |
+7 |     s[i] == substring[j] && StartsWithAt(s, substring, i + 1, j + 1)
+  |      ^
+
+.vericode/bench/humaneval/sessions/4f17fec73875/implementation.dfy(7,21): Error: index out of range
+  |
+7 |     s[i] == substring[j] && StartsWithAt(s, substring, i + 1, j + 1)
+  |                      ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

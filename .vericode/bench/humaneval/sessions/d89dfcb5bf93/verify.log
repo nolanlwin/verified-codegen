@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/d89dfcb5bf93/implementation.dfy(21,25): Error: lower bound out of range
+   |
+21 |   else MedianSortedSpec(s[1..(|s| - 1)])
+   |                          ^
+
+
+Dafny program verifier finished with 6 verified, 1 error

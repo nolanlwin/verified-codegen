@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/b1d272a52445/implementation.dfy(5,31): Error: decreases expression must be bounded below by 0
+  |
+5 |   else [current] + MakeAPileAux(current + 2, remaining - 1)
+  |                                ^
+
+.vericode/bench/humaneval/sessions/b1d272a52445/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases remaining
+  |             ^^^^^^^^^
+
+
+Dafny program verifier finished with 2 verified, 1 error

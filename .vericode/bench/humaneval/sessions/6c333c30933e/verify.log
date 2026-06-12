@@ -1,0 +1,27 @@
+.vericode/bench/humaneval/sessions/6c333c30933e/implementation.dfy(25,34): Error: decreases expression must be bounded below by 0
+   |
+25 |   if n == 0 then 1 else 10 * Pow10(n - 1)
+   |                                   ^
+
+.vericode/bench/humaneval/sessions/6c333c30933e/implementation.dfy(23,12): Related location: this decreases clause was not satisfied
+   |
+23 |   decreases n
+   |             ^
+
+.vericode/bench/humaneval/sessions/6c333c30933e/implementation.dfy(54,19): Error: upper bound below lower bound or above length of sequence
+   |
+54 |   ParseDigitsSpec(s[0..slash])
+   |                    ^
+
+.vericode/bench/humaneval/sessions/6c333c30933e/implementation.dfy(60,43): Error: lower bound out of range
+   |
+60 |   if slash + 1 < |s| then ParseDigitsSpec(s[slash + 1..]) else 0
+   |                                            ^
+
+.vericode/bench/humaneval/sessions/6c333c30933e/implementation.dfy(79,16): Error: possible division by zero
+   |
+79 |   (xNum * nNum) % (xDen * nDen) == 0
+   |                 ^
+
+
+Dafny program verifier finished with 5 verified, 4 errors

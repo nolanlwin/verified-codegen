@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def solution(lst):
+    """Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.
+    
+
+    Examples
+    solution([5, 8, 7, 1]) ==> 12
+    solution([3, 3, 3, 3, 3]) ==> 9
+    solution([30, 13, 24, 321]) ==>0
+    """
+
+Requirements:
+- The main Dafny method must be named `solution` (PascalCase `Solution` is OK).
+- Define a pure recursive `function SolutionSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SolutionSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `solution`.

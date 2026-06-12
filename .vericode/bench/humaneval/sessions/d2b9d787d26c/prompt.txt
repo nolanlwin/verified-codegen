@@ -1,0 +1,25 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def modp(n: int, p: int):
+    """Return 2^n modulo p (be aware of numerics).
+    >>> modp(3, 5)
+    3
+    >>> modp(1101, 101)
+    2
+    >>> modp(0, 101)
+    1
+    >>> modp(3, 11)
+    8
+    >>> modp(100, 101)
+    1
+    """
+
+Requirements:
+- The main Dafny method must be named `modp` (PascalCase `Modp` is OK).
+- Define a pure recursive `function ModpSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == ModpSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `modp`.

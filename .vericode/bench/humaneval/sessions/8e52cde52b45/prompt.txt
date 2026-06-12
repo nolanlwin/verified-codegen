@@ -1,0 +1,24 @@
+Implement the following Python function with verified Dafny code.
+
+
+def digitSum(s):
+    """Task
+    Write a function that takes a string as input and returns the sum of the upper characters only'
+    ASCII codes.
+
+    Examples:
+        digitSum("") => 0
+        digitSum("abAB") => 131
+        digitSum("abcCd") => 67
+        digitSum("helloE") => 69
+        digitSum("woArBld") => 131
+        digitSum("aAaaaXa") => 153
+    """
+
+Requirements:
+- The main Dafny method must be named `digitSum` (PascalCase `Digitsum` is OK).
+- Define a pure recursive `function DigitsumSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == DigitsumSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `digitSum`.

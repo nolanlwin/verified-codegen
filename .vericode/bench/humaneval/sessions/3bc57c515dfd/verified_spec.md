@@ -1,0 +1,6 @@
+The function takes a sequence of numeric values and returns a sequence of the same length where each element is linearly rescaled using the minimum and maximum values of the input. Each output element equals `(input element - minimum input value) / (maximum input value - minimum input value)`. Therefore, the smallest input value maps to 0 and the largest input value maps to 1. The input must contain at least two elements and must not be constant, so that the maximum is strictly greater than the minimum.
+
+Notes from formalizer:
+- The original request states that the input has at least two elements, but does not specify what should happen when all elements are equal. In that case, the requested transformation would require division by zero and cannot make the smallest value 0 while also making the largest value 1. The specification therefore requires the minimum to be strictly less than the maximum.
+- The specification uses mathematical real numbers to model Python floats. This captures the intended arithmetic semantics but does not model floating-point rounding, infinities, NaN, or signed zero behavior.
+- The method body is intentionally empty except for the required assumption placeholder, as requested.

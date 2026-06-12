@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def fib(n: int):
+    """Return n-th Fibonacci number.
+    >>> fib(10)
+    55
+    >>> fib(1)
+    1
+    >>> fib(8)
+    21
+    """
+
+Requirements:
+- The main Dafny method must be named `fib` (PascalCase `Fib` is OK).
+- Define a pure recursive `function FibSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FibSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `fib`.

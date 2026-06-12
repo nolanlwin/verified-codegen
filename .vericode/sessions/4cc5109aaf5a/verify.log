@@ -1,0 +1,12 @@
+.vericode/sessions/4cc5109aaf5a/implementation.dfy(9,0): Error: a postcondition could not be proved on this return path
+  |
+9 | {
+  | ^
+
+.vericode/sessions/4cc5109aaf5a/implementation.dfy(8,17): Related location: this is the postcondition that could not be proved
+  |
+8 |   ensures result == SlackResponseStyleSpec(has_slack_thread_context)
+  |                  ^^
+
+
+Dafny program verifier finished with 0 verified, 1 error

@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def max_element(l: list):
+    """Return maximum element in the list.
+    >>> max_element([1, 2, 3])
+    3
+    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+    123
+    """
+
+Requirements:
+- The main Dafny method must be named `max_element` (PascalCase `MaxElement` is OK).
+- Define a pure recursive `function MaxElementSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == MaxElementSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `max_element`.

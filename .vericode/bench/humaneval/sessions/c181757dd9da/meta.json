@@ -1,0 +1,18 @@
+{
+  "session_id": "c181757dd9da",
+  "status": "done",
+  "created_at": "2026-06-12T11:05:28.373303Z",
+  "updated_at": "2026-06-12T11:07:26.715585Z",
+  "spec_model": "gpt-5.5",
+  "codegen_model": "gpt-5.5",
+  "verified": true,
+  "verify_attempts": 1,
+  "max_verify_retries": 10,
+  "error_message": null,
+  "revision_feedback": [],
+  "source_type": "nl",
+  "source_ref": null,
+  "verification_mode": "greenfield",
+  "focus_symbol": null,
+  "focus_language": null
+}

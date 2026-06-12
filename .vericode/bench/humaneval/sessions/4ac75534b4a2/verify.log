@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/4ac75534b4a2/implementation.dfy(6,22): Error: lower bound out of range
+  |
+6 |   else if paren_string[i..i+1] == " " then
+  |                       ^
+
+
+Dafny program verifier finished with 2 verified, 1 error

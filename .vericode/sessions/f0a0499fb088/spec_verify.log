@@ -1,0 +1,7 @@
+.vericode/sessions/f0a0499fb088/internal_spec.dfy(13,2): Warning: assume statement has no {:axiom} annotation
+   |
+13 |   assume false;
+   |   ^^^^^^
+
+
+Dafny program verifier did not attempt verification

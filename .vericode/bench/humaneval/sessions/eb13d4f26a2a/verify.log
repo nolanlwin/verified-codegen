@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/eb13d4f26a2a/implementation.dfy(26,57): Error: decreases expression must be bounded below by 0
+   |
+26 |     if number == 1 then "i" else "i" + IntToMiniRomanSpec(number - 1)
+   |                                                          ^
+
+.vericode/bench/humaneval/sessions/eb13d4f26a2a/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases number
+  |             ^^^^^^
+
+
+Dafny program verifier finished with 1 verified, 1 error

@@ -1,0 +1,26 @@
+{
+  "outcome": "INHERENTLY_UNVERIFIABLE",
+  "summary": "`ee/api/agentic_provisioning/views.py:_error_response` is not verifiable in v1: Scoped source uses logging side effect (`\\blogger\\.(warning|info|error|debug|exception)\\b`); Scoped source uses Django REST framework Response (`\\bResponse\\s*\\(`); PR description suggests observability/logging intent (`\\blogging\\b`).",
+  "findings": [
+    {
+      "category": "verifiability",
+      "message": "Scoped source uses logging side effect (`\\blogger\\.(warning|info|error|debug|exception)\\b`)",
+      "spec_clause": null,
+      "pr_location": null
+    },
+    {
+      "category": "verifiability",
+      "message": "Scoped source uses Django REST framework Response (`\\bResponse\\s*\\(`)",
+      "spec_clause": null,
+      "pr_location": null
+    },
+    {
+      "category": "verifiability",
+      "message": "PR description suggests observability/logging intent (`\\blogging\\b`)",
+      "spec_clause": null,
+      "pr_location": null
+    }
+  ],
+  "focus_symbol": "ee/api/agentic_provisioning/views.py:_error_response",
+  "verified": false
+}

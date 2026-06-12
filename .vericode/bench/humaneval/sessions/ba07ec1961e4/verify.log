@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/ba07ec1961e4/implementation.dfy(72,33): Error: possible division by zero
+   |
+72 |   if i == |s| then (num as real) / (scale as real)
+   |                                  ^
+
+
+Dafny program verifier finished with 7 verified, 1 error

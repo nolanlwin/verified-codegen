@@ -1,0 +1,72 @@
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(18,18): Error: index out of range
+   |
+18 |       1 <= grid[r][c] && grid[r][c] <= |grid| * |grid|) &&
+   |                   ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(22,12): Error: index out of range
+   |
+22 |     grid[r1][c1] == grid[r2][c2] ==>
+   |             ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(22,28): Error: index out of range
+   |
+22 |     grid[r1][c1] == grid[r2][c2] ==>
+   |                             ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(33,38): Error: index out of range
+   |
+33 |   if InBounds(grid, r, c) then grid[r][c] else |grid| * |grid| + 1
+   |                                       ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(38,6): Error: index out of range
+   |
+38 |   grid[index / |grid|][index % |grid|]
+   |       ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(38,13): Error: possible division by zero
+   |
+38 |   grid[index / |grid|][index % |grid|]
+   |              ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(38,22): Error: index out of range
+   |
+38 |   grid[index / |grid|][index % |grid|]
+   |                       ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(43,17): Error: possible division by zero
+   |
+43 |   Position(index / |grid|, index % |grid|)
+   |                  ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(51,28): Error: decreases expression must be bounded below by 0
+   |
+51 |     var tail := MinIndexFrom(grid, index + 1);
+   |                             ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(47,28): Related location: this decreases clause was not satisfied
+   |
+47 |   decreases |grid| * |grid| - index
+   |                             ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(74,34): Error: decreases expression must be bounded below by 0
+   |
+74 |     var tail := MinNeighborDirFrom(grid, r, c, dir + 1);
+   |                                   ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(70,14): Related location: this decreases clause was not satisfied
+   |
+70 |   decreases 4 - dir
+   |               ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(98,48): Error: decreases expression must be bounded below by 0
+   |
+98 |     [CellValueOrLarge(grid, r, c)] + MinpathFrom(grid, next.row, next.col, k - 1)
+   |                                                 ^
+
+.vericode/bench/humaneval/sessions/3a49f58db931/implementation.dfy(93,12): Related location: this decreases clause was not satisfied
+   |
+93 |   decreases k
+   |             ^
+
+
+Dafny program verifier finished with 2 verified, 11 errors

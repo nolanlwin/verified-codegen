@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def f(n):
+    """ Implement the function f that takes n as a parameter,
+    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even
+    or the sum of numbers from 1 to i otherwise.
+    i starts from 1.
+    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).
+    Example:
+    f(5) == [1, 2, 6, 24, 15]
+    """
+
+Requirements:
+- The main Dafny method must be named `f` (PascalCase `F` is OK).
+- Define a pure recursive `function FSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `f`.

@@ -1,0 +1,11 @@
+.vericode/bench/humaneval/sessions/52792947e980/internal_spec.dfy(7,39): Error: arguments must have comparable types (got char and string)
+  |
+7 |     (brackets[i] == '<' || brackets[i] == ">") && AllAngleBrackets(brackets, i + 1)
+  |                                        ^^
+
+.vericode/bench/humaneval/sessions/52792947e980/internal_spec.dfy(30,2): Warning: assume statement has no {:axiom} annotation
+   |
+30 |   assume false;
+   |   ^^^^^^
+
+1 resolution/type errors detected in internal_spec.dfy

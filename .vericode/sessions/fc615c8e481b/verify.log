@@ -1,0 +1,6 @@
+.vericode/sessions/fc615c8e481b/implementation.dfy(14,30): Error: lbrace expected
+   |
+14 |   if has_slack_thread_context then
+   |                               ^
+
+1 parse errors detected in implementation.dfy

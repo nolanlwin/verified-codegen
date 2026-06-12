@@ -1,0 +1,18 @@
+{
+  "session_id": "5141c9ba48be",
+  "status": "failed",
+  "created_at": "2026-06-12T16:32:32.928960Z",
+  "updated_at": "2026-06-12T16:41:59.137885Z",
+  "spec_model": "gpt-5.5",
+  "codegen_model": "gpt-5.5",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 10,
+  "error_message": "Verification failed after 10 retries.",
+  "revision_feedback": [],
+  "source_type": "nl",
+  "source_ref": null,
+  "verification_mode": "greenfield",
+  "focus_symbol": null,
+  "focus_language": null
+}

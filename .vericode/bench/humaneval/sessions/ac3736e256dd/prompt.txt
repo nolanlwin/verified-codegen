@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+
+Requirements:
+- The main Dafny method must be named `strlen` (PascalCase `Strlen` is OK).
+- Define a pure recursive `function StrlenSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == StrlenSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `strlen`.

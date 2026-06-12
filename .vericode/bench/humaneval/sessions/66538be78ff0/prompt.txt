@@ -1,0 +1,25 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def correct_bracketing(brackets: str):
+    """ brackets is a string of "(" and ")".
+    return True if every opening bracket has a corresponding closing bracket.
+
+    >>> correct_bracketing("(")
+    False
+    >>> correct_bracketing("()")
+    True
+    >>> correct_bracketing("(()())")
+    True
+    >>> correct_bracketing(")(()")
+    False
+    """
+
+Requirements:
+- The main Dafny method must be named `correct_bracketing` (PascalCase `CorrectBracketing` is OK).
+- Define a pure recursive `function CorrectBracketingSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == CorrectBracketingSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `correct_bracketing`.

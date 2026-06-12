@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/da7b193f8f70/implementation.dfy(5,28): Error: index out of range
+  |
+5 |   else (if i % 2 == 0 && lst[i] % 2 != 0 then lst[i] else 0) + SolutionAux(lst, i + 1)
+  |                             ^
+
+.vericode/bench/humaneval/sessions/da7b193f8f70/implementation.dfy(5,74): Error: decreases expression must be bounded below by 0
+  |
+5 |   else (if i % 2 == 0 && lst[i] % 2 != 0 then lst[i] else 0) + SolutionAux(lst, i + 1)
+  |                                                                           ^
+
+.vericode/bench/humaneval/sessions/da7b193f8f70/implementation.dfy(2,18): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases |lst| - i
+  |                   ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

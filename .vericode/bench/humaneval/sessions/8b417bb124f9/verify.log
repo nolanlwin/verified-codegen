@@ -1,0 +1,47 @@
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(24,40): Error: index out of range
+   |
+24 |   else (operators[0] != "//" || operands[1] != 0) && NoImmediateZeroDivisors(operators[1..], operands[1..])
+   |                                         ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(24,101): Error: lower bound out of range
+   |
+24 |   else (operators[0] != "//" || operands[1] != 0) && NoImmediateZeroDivisors(operators[1..], operands[1..])
+   |                                                                                                      ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(31,17): Error: decreases expression must be bounded below by 0
+   |
+31 |   else base * Pow(base, exponent - 1)
+   |                  ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(28,12): Related location: this decreases clause was not satisfied
+   |
+28 |   decreases exponent
+   |             ^^^^^^^^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(76,48): Error: upper bound below lower bound or above length of sequence
+   |
+76 |         DoAlgebraSpec(operators[..add], operands[..add + 1]) + DoAlgebraSpec(operators[add + 1..], operands[add + 1..])
+   |                                                 ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(78,48): Error: upper bound below lower bound or above length of sequence
+   |
+78 |         DoAlgebraSpec(operators[..add], operands[..add + 1]) - DoAlgebraSpec(operators[add + 1..], operands[add + 1..])
+   |                                                 ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(83,50): Error: upper bound below lower bound or above length of sequence
+   |
+83 |           DoAlgebraSpec(operators[..mul], operands[..mul + 1]) * DoAlgebraSpec(operators[mul + 1..], operands[mul + 1..])
+   |                                                   ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(85,69): Error: lower bound out of range
+   |
+85 |           var divisor := DoAlgebraSpec(operators[mul + 1..], operands[mul + 1..]);
+   |                                                                      ^
+
+.vericode/bench/humaneval/sessions/8b417bb124f9/implementation.dfy(90,49): Error: lower bound out of range
+   |
+90 |           var exponent := DoAlgebraSpec(operators[pow + 1..], operands[pow + 1..]);
+   |                                                  ^
+
+
+Dafny program verifier finished with 6 verified, 8 errors

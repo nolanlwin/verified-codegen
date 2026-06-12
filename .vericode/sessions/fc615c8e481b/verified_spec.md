@@ -1,0 +1,5 @@
+The purpose of this PR is to adjust the PostHog Slack app's responses to be concise and suitable for Slack's chat interface, contrasting with the more verbose responses suitable for the web app. The new behavior introduces a response-style prompt that only applies when the message originates from a Slack thread. It aims for more succinct replies, limiting the use of bullet points and eliminating unnecessary preambles, ensuring that answers can be presented in a short, skimmable format, particularly when the user has requested more direct answers.
+
+Notes from formalizer:
+- The PR description emphasizes that the Slack app should provide shorter, skimmable replies, while the code diff shows the conditional response structure. The method relies on a specified configuration (slack_thread_context) to determine when to apply this shorter response format, which aligns with user feedback.
+- Unresolved identifier: RunnableConfig is noted as potentially ambiguous in terms of its type and usage within the context of the specification.

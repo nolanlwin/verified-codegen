@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """ Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)
+    False
+    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+    True
+    """
+
+Requirements:
+- The main Dafny method must be named `has_close_elements` (PascalCase `HasCloseElements` is OK).
+- Define a pure recursive `function HasCloseElementsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == HasCloseElementsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `has_close_elements`.

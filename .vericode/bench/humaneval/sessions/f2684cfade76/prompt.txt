@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def how_many_times(string: str, substring: str) -> int:
+    """ Find how many times a given substring can be found in the original string. Count overlaping cases.
+    >>> how_many_times('', 'a')
+    0
+    >>> how_many_times('aaa', 'a')
+    3
+    >>> how_many_times('aaaa', 'aa')
+    3
+    """
+
+Requirements:
+- The main Dafny method must be named `how_many_times` (PascalCase `HowManyTimes` is OK).
+- Define a pure recursive `function HowManyTimesSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == HowManyTimesSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `how_many_times`.

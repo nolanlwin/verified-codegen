@@ -1,0 +1,18 @@
+{
+  "session_id": "e0078cab06e9",
+  "status": "done_with_findings",
+  "created_at": "2026-06-12T07:42:04.409128Z",
+  "updated_at": "2026-06-12T07:42:04.417750Z",
+  "spec_model": "gpt-4o-mini",
+  "codegen_model": "gpt-4o",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 5,
+  "error_message": null,
+  "revision_feedback": [],
+  "source_type": "github_pr",
+  "source_ref": "https://github.com/PostHog/posthog/pull/51418",
+  "verification_mode": "verify_pr",
+  "focus_symbol": "ee/api/agentic_provisioning/views.py:_error_response",
+  "focus_language": "python"
+}

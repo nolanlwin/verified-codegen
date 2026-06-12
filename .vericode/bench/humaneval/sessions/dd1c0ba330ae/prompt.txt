@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List, Any
+
+
+def filter_integers(values: List[Any]) -> List[int]:
+    """ Filter given list of any python values only for integers
+    >>> filter_integers(['a', 3.14, 5])
+    [5]
+    >>> filter_integers([1, 2, 3, 'abc', {}, []])
+    [1, 2, 3]
+    """
+
+Requirements:
+- The main Dafny method must be named `filter_integers` (PascalCase `FilterIntegers` is OK).
+- Define a pure recursive `function FilterIntegersSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FilterIntegersSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `filter_integers`.

@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def get_positive(l: list):
+    """Return only positive numbers in the list.
+    >>> get_positive([-1, 2, -4, 5, 6])
+    [2, 5, 6]
+    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])
+    [5, 3, 2, 3, 9, 123, 1]
+    """
+
+Requirements:
+- The main Dafny method must be named `get_positive` (PascalCase `GetPositive` is OK).
+- Define a pure recursive `function GetPositiveSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == GetPositiveSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `get_positive`.

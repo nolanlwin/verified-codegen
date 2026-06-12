@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/d2b9d787d26c/implementation.dfy(4,19): Error: possible division by zero
+  |
+4 |   if n == 0 then 1 % p else (2 * ModpSpec(n - 1, p)) % p
+  |                    ^
+
+.vericode/bench/humaneval/sessions/d2b9d787d26c/implementation.dfy(4,41): Error: decreases expression must be bounded below by 0
+  |
+4 |   if n == 0 then 1 % p else (2 * ModpSpec(n - 1, p)) % p
+  |                                          ^
+
+.vericode/bench/humaneval/sessions/d2b9d787d26c/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n
+  |             ^
+
+.vericode/bench/humaneval/sessions/d2b9d787d26c/implementation.dfy(4,53): Error: possible division by zero
+  |
+4 |   if n == 0 then 1 % p else (2 * ModpSpec(n - 1, p)) % p
+  |                                                      ^
+
+
+Dafny program verifier finished with 1 verified, 3 errors

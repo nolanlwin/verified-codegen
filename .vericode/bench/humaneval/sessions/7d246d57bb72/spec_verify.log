@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/7d246d57bb72/internal_spec.dfy(30,2): Warning: assume statement has no {:axiom} annotation
+   |
+30 |   assume false;
+   |   ^^^^^^
+
+
+Dafny program verifier did not attempt verification

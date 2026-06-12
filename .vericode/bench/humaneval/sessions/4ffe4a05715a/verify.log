@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/4ffe4a05715a/implementation.dfy(10,12): Error: possible division by zero
+   |
+10 |   else if n % d == 0 then false
+   |             ^
+
+.vericode/bench/humaneval/sessions/4ffe4a05715a/implementation.dfy(11,22): Error: decreases expression must be bounded below by 0
+   |
+11 |   else IsPrimeSpecFrom(n, d + 1)
+   |                       ^
+
+.vericode/bench/humaneval/sessions/4ffe4a05715a/implementation.dfy(7,14): Related location: this decreases clause was not satisfied
+  |
+7 |   decreases n - d
+  |               ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

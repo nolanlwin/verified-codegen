@@ -1,0 +1,137 @@
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(8,32): Error: decreases expression must be bounded below by 0
+  |
+8 |   if n == 0 then 1 else 2 * Pow2(n - 1)
+  |                                 ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(6,12): Related location: this decreases clause was not satisfied
+  |
+6 |   decreases n
+  |             ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(13,6): Error: possible division by zero
+   |
+13 |   ((x % Pow2(32)) + Pow2(32)) % Pow2(32)
+   |       ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(19,31): Error: decreases expression must be bounded below by 0
+   |
+19 |   if k == 0 then x % 2 else Bit(x / 2, k - 1)
+   |                                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(17,12): Related location: this decreases clause was not satisfied
+   |
+17 |   decreases k
+   |             ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(25,33): Error: index out of range
+   |
+25 |   if i == |bits| then 0 else bits[i] * Pow2(i) + BitsToIntAux(bits, i + 1)
+   |                                  ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(31,89): Error: decreases expression must be bounded below by 0
+   |
+31 |   if k == 32 then [] else [if Bit(a, k) == 1 && Bit(b, k) == 1 then 1 else 0] + AndBits32(a, b, k + 1)
+   |                                                                                          ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(29,15): Related location: this decreases clause was not satisfied
+   |
+29 |   decreases 32 - k
+   |                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(37,88): Error: decreases expression must be bounded below by 0
+   |
+37 |   if k == 32 then [] else [if Bit(a, k) == 1 || Bit(b, k) == 1 then 1 else 0] + OrBits32(a, b, k + 1)
+   |                                                                                         ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(35,15): Related location: this decreases clause was not satisfied
+   |
+35 |   decreases 32 - k
+   |                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(43,79): Error: decreases expression must be bounded below by 0
+   |
+43 |   if k == 32 then [] else [if Bit(a, k) != Bit(b, k) then 1 else 0] + XorBits32(a, b, k + 1)
+   |                                                                                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(41,15): Related location: this decreases clause was not satisfied
+   |
+41 |   decreases 32 - k
+   |                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(68,41): Error: possible division by zero
+   |
+68 |   Uint32(Uint32(x) * Pow2(s) + Uint32(x) / Pow2(32 - s))
+   |                                          ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(88,43): Error: index out of range
+   |
+88 |   if i == |text| then [] else Utf8Char(text[i]) + StringBytesAux(text, i + 1)
+   |                                            ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(99,36): Error: decreases expression must be bounded below by 0
+   |
+99 |   if n == 0 then [] else [0] + Zeros(n - 1)
+   |                                     ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(97,12): Related location: this decreases clause was not satisfied
+   |
+97 |   decreases n
+   |             ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(105,62): Error: decreases expression must be bounded below by 0
+    |
+105 |   if count == 0 then [] else [value % 256] + LittleEndianBytes(value / 256, count - 1)
+    |                                                               ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(103,12): Related location: this decreases clause was not satisfied
+    |
+103 |   decreases count
+    |             ^^^^^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(115,84): Error: possible division by zero
+    |
+115 |   bytes + [128] + Zeros(Md5ZeroPadCount(|bytes|)) + LittleEndianBytes((|bytes| * 8) % Pow2(64), 8)
+    |                                                                                     ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(166,7): Error: index out of range
+    |
+166 |   block[4 * index] + 256 * block[4 * index + 1] + 65536 * block[4 * index + 2] + 16777216 * block[4 * index + 3]
+    |        ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(166,32): Error: index out of range
+    |
+166 |   block[4 * index] + 256 * block[4 * index + 1] + 65536 * block[4 * index + 2] + 16777216 * block[4 * index + 3]
+    |                                 ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(166,63): Error: index out of range
+    |
+166 |   block[4 * index] + 256 * block[4 * index + 1] + 65536 * block[4 * index + 2] + 16777216 * block[4 * index + 3]
+    |                                                                ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(166,97): Error: index out of range
+    |
+166 |   block[4 * index] + 256 * block[4 * index + 1] + 65536 * block[4 * index + 2] + 16777216 * block[4 * index + 3]
+    |                                                                                                  ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(177,9): Error: Verification of 'Md5Round64' timed out after 30 seconds. (the limit can be increased using --verification-time-limit)
+    |
+177 | function Md5Round64(block: seq<int>, i: int, state: Md5State): Md5State
+    |          ^^^^^^^^^^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(188,37): Error: lower bound out of range
+    |
+188 |     var rounded := Md5Round64(message[offset..offset + 64], 0, state);
+    |                                      ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(188,37): Error: upper bound below lower bound or above length of sequence
+    |
+188 |     var rounded := Md5Round64(message[offset..offset + 64], 0, state);
+    |                                      ^
+
+.vericode/bench/humaneval/sessions/21bf0c29a5f0/implementation.dfy(209,46): Error: index out of range
+    |
+209 |   if i == |bytes| then "" else ByteToHex(bytes[i]) + BytesToHex(bytes, i + 1)
+    |                                               ^
+
+
+Dafny program verifier finished with 6 verified, 19 errors, 1 time out

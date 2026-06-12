@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/c3778831f4cd/implementation.dfy(4,68): Error: decreases clause might not decrease
+  |
+4 |   if x == 0 then 0 else (if x % 10 == 7 then 1 else 0) + CountDigit7(x / 10)
+  |                                                                     ^
+
+.vericode/bench/humaneval/sessions/c3778831f4cd/implementation.dfy(4,68): Error: decreases expression must be bounded below by 0
+  |
+4 |   if x == 0 then 0 else (if x % 10 == 7 then 1 else 0) + CountDigit7(x / 10)
+  |                                                                     ^
+
+.vericode/bench/humaneval/sessions/c3778831f4cd/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases x
+  |             ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

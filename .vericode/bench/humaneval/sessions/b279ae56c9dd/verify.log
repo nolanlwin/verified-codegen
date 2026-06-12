@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/b279ae56c9dd/implementation.dfy(4,30): Error: possible division by zero
+  |
+4 |   if d >= n then false else n % d == 0 || HasDivisorFrom(n, d + 1)
+  |                               ^
+
+
+Dafny program verifier finished with 3 verified, 1 error

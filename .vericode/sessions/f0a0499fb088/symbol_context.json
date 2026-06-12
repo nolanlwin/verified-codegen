@@ -1,0 +1,38 @@
+{
+  "abstract_parameters": [
+    {
+      "dafny_name": "has_slack_thread_context",
+      "dafny_type": "bool",
+      "replaces_python_param": "config",
+      "reason": "configurable[slack_thread_context] is present"
+    }
+  ],
+  "external_constants": [
+    {
+      "name": "SLACK_RESPONSE_STYLE_PROMPT",
+      "defining_path": "ee/hogai/chat_agent/prompts/base.py",
+      "marker": "slack_response_style",
+      "value_preview": "<slack_response_style> You are responding in a Slack thread, not the PostHog web app. Slack readers want short, skimmabl…"
+    }
+  ],
+  "test_oracles": [
+    {
+      "condition": "context is active (per focused PR test)",
+      "expectation": "combined output includes 'responding in a Slack thread'",
+      "source_path": "ee/hogai/chat_agent/test/test_mode_manager.py"
+    },
+    {
+      "condition": "context is inactive (per focused PR test)",
+      "expectation": "combined output must not include 'responding in a Slack thread'",
+      "source_path": "ee/hogai/chat_agent/test/test_mode_manager.py"
+    },
+    {
+      "condition": "parameterized cases distinguish active vs inactive context",
+      "expectation": "return value is non-empty iff context is active",
+      "source_path": "ee/hogai/chat_agent/test/test_mode_manager.py"
+    }
+  ],
+  "unresolved_names": [
+    "RunnableConfig"
+  ]
+}

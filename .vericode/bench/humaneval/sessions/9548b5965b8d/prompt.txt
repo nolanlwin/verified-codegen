@@ -1,0 +1,23 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def encode_shift(s: str):
+    """
+    returns encoded string by shifting every character by 5 in the alphabet.
+    """
+    return "".join([chr(((ord(ch) + 5 - ord("a")) % 26) + ord("a")) for ch in s])
+
+
+def decode_shift(s: str):
+    """
+    takes as input string encoded with encode_shift function. Returns decoded string.
+    """
+
+Requirements:
+- The main Dafny method must be named `decode_shift` (PascalCase `DecodeShift` is OK).
+- Define a pure recursive `function DecodeShiftSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == DecodeShiftSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `decode_shift`.

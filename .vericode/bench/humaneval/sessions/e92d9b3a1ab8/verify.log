@@ -1,0 +1,42 @@
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(4,49): Error: decreases expression must be bounded below by 0
+  |
+4 |   if k == 0 then 0 else if k == 1 then 1 else Fib(k - 1) + Fib(k - 2)
+  |                                                  ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases k
+  |             ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(21,73): Error: decreases expression must be bounded below by 0
+   |
+21 |   if Fib(k) == x then true else if k == 0 then false else HasFibValueUpTo(x, k - 1)
+   |                                                                          ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(19,12): Related location: this decreases clause was not satisfied
+   |
+19 |   decreases k
+   |             ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(37,41): Error: decreases expression must be bounded below by 0
+   |
+37 |   if x == 0 then 0 else CountPrimeFibUpTo(x - 1) + (if IsPrimeFibonacciNumber(x) then 1 else 0)
+   |                                          ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(35,12): Related location: this decreases clause was not satisfied
+   |
+35 |   decreases x
+   |             ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(43,86): Error: decreases expression must be bounded below by 0
+   |
+43 |   if x == 0 then 0 else if CountPrimeFibUpTo(x - 1) < n then x else PrimeFibRankSearch(n, x - 1)
+   |                                                                                       ^
+
+.vericode/bench/humaneval/sessions/e92d9b3a1ab8/implementation.dfy(41,12): Related location: this decreases clause was not satisfied
+   |
+41 |   decreases x
+   |             ^
+
+
+Dafny program verifier finished with 2 verified, 4 errors

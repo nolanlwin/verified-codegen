@@ -1,0 +1,21 @@
+.vericode/bench/humaneval/sessions/067c29d204f5/internal_spec.dfy(9,32): Error: arguments must have comparable types (got char and string)
+  |
+9 |       (i + 2 == |s| || s[i + 2] == " ") && ValidMusicFrom(s, i + 2)
+  |                                 ^^
+
+.vericode/bench/humaneval/sessions/067c29d204f5/internal_spec.dfy(11,32): Error: arguments must have comparable types (got char and string)
+   |
+11 |       (i + 1 == |s| || s[i + 1] == " ") && ValidMusicFrom(s, i + 1)
+   |                                 ^^
+
+.vericode/bench/humaneval/sessions/067c29d204f5/internal_spec.dfy(13,64): Error: arguments must have comparable types (got char and string)
+   |
+13 |     i + 1 < |s| && s[i + 1] == '|' && (i + 2 == |s| || s[i + 2] == " ") && ValidMusicFrom(s, i + 2)
+   |                                                                 ^^
+
+.vericode/bench/humaneval/sessions/067c29d204f5/internal_spec.dfy(40,2): Warning: assume statement has no {:axiom} annotation
+   |
+40 |   assume false;
+   |   ^^^^^^
+
+3 resolution/type errors detected in internal_spec.dfy

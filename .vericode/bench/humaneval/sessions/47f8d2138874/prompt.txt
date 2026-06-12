@@ -1,0 +1,17 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def flip_case(string: str) -> str:
+    """ For a given string, flip lowercase characters to uppercase and uppercase to lowercase.
+    >>> flip_case('Hello')
+    'hELLO'
+    """
+
+Requirements:
+- The main Dafny method must be named `flip_case` (PascalCase `FlipCase` is OK).
+- Define a pure recursive `function FlipCaseSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FlipCaseSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `flip_case`.

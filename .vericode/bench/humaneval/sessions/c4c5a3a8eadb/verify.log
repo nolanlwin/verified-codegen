@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/c4c5a3a8eadb/implementation.dfy(17,53): Error: decreases clause might not decrease
+   |
+17 |   if x < base then DigitString(x) else ChangeBaseSpec(x / base, base) + DigitString(x % base)
+   |                                                      ^
+
+.vericode/bench/humaneval/sessions/c4c5a3a8eadb/implementation.dfy(17,53): Error: decreases expression must be bounded below by 0
+   |
+17 |   if x < base then DigitString(x) else ChangeBaseSpec(x / base, base) + DigitString(x % base)
+   |                                                      ^
+
+.vericode/bench/humaneval/sessions/c4c5a3a8eadb/implementation.dfy(15,12): Related location: this decreases clause was not satisfied
+   |
+15 |   decreases x
+   |             ^
+
+.vericode/bench/humaneval/sessions/c4c5a3a8eadb/implementation.dfy(17,56): Error: possible division by zero
+   |
+17 |   if x < base then DigitString(x) else ChangeBaseSpec(x / base, base) + DigitString(x % base)
+   |                                                         ^
+
+
+Dafny program verifier finished with 1 verified, 3 errors

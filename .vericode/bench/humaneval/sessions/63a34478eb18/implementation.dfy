@@ -1,0 +1,33 @@
+function AllNonNegativeSpec(lst: seq<int>): bool
+  decreases |lst|
+{
+  if |lst| == 0 then true
+  else lst[0] >= 0 && AllNonNegativeSpec(lst[1..])
+}
+
+function IsSortedSpec(lst: seq<int>): bool
+  decreases |lst|
+{
+  if |lst| <= 1 then true
+  else if lst[0] > lst[1] then false
+  else if |lst| >= 3 && lst[0] == lst[2] then false
+  else IsSortedSpec(lst[1..])
+}
+
+method is_sorted(lst: seq<int>) returns (result: bool)
+  requires AllNonNegativeSpec(lst)
+  ensures result == IsSortedSpec(lst)
+  decreases |lst|
+{
+  if |lst| <= 1 {
+    result := true;
+  } else if lst[0] > lst[1] {
+    result := false;
+  } else if |lst| >= 3 && lst[0] == lst[2] {
+    result := false;
+  } else {
+    assert |lst| > 0;
+    assert AllNonNegativeSpec(lst[1..]);
+    result := is_sorted(lst[1..]);
+  }
+}

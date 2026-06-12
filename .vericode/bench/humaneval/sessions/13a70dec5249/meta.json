@@ -1,0 +1,18 @@
+{
+  "session_id": "13a70dec5249",
+  "status": "failed",
+  "created_at": "2026-06-12T16:41:59.190124Z",
+  "updated_at": "2026-06-12T16:46:59.160275Z",
+  "spec_model": "gpt-5.5",
+  "codegen_model": "gpt-5.5",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 10,
+  "error_message": "Spec skeleton failed verification.",
+  "revision_feedback": [],
+  "source_type": "nl",
+  "source_ref": null,
+  "verification_mode": "greenfield",
+  "focus_symbol": null,
+  "focus_language": null
+}

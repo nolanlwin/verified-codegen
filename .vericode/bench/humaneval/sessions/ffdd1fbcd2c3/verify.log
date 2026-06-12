@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/ffdd1fbcd2c3/implementation.dfy(31,40): Error: decreases expression must be bounded below by 0
+   |
+31 |     [PlanetAt(cur)] + PlanetsBetweenSpec(lo, hi, cur + 1)
+   |                                         ^
+
+.vericode/bench/humaneval/sessions/ffdd1fbcd2c3/implementation.dfy(27,14): Related location: this decreases clause was not satisfied
+   |
+27 |   decreases 9 - cur
+   |               ^
+
+.vericode/bench/humaneval/sessions/ffdd1fbcd2c3/implementation.dfy(33,22): Error: decreases expression must be bounded below by 0
+   |
+33 |     PlanetsBetweenSpec(lo, hi, cur + 1)
+   |                       ^
+
+.vericode/bench/humaneval/sessions/ffdd1fbcd2c3/implementation.dfy(27,14): Related location: this decreases clause was not satisfied
+   |
+27 |   decreases 9 - cur
+   |               ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

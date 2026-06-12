@@ -1,0 +1,7 @@
+The function takes a nonempty list of algebra operators and a list of integer operands whose length is exactly one greater than the operator list. All operands must be non-negative, and every operator must be one of +, -, *, //, or **. It evaluates the expression formed by interleaving operands and operators, using standard Python-like precedence: exponentiation first, then multiplication/floor division, then addition/subtraction. Exponentiation is right-associative, while the other binary operators are left-associative. The returned integer is exactly the value of that expression.
+
+Notes from formalizer:
+- The example implies normal expression precedence rather than simple left-to-right evaluation; this specification follows that interpretation.
+- Inputs that would divide by zero are excluded by a precondition. The precondition conservatively requires the operand immediately following each // operator to be nonzero, which may reject some Python expressions that avoid zero division through exponentiation such as 1 // (0 ** 0) as written without parentheses.
+- Floor division is specified over integers. With the stated nonzero-divisor precondition and non-negative divisor subexpressions, this is intended to match Python // behavior.
+- The internal skeleton includes guarded fallback branches for division by zero or negative exponents only to keep the semantic function total under conservative reasoning; those branches are unreachable for inputs satisfying the stated preconditions.

@@ -1,0 +1,13 @@
+{
+  "session_id": "405e299a7432",
+  "status": "draft_spec",
+  "created_at": "2026-06-12T03:04:45.643318Z",
+  "updated_at": "2026-06-12T03:04:45.664542Z",
+  "spec_model": "gpt-5.5",
+  "codegen_model": "gpt-5.5",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 10,
+  "error_message": null,
+  "revision_feedback": []
+}

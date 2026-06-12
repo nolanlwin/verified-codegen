@@ -1,0 +1,11 @@
+.vericode/bench/humaneval/sessions/9c6eb23cc738/implementation.dfy(9,61): Error: closeparen expected
+  |
+9 |     q[0] == q[|q| - 1] && WillItFlySpec(q[1..|qAbsDistInt(- 1], w, q[0] - q[)q| - 1])
+  |                                                              ^
+
+.vericode/bench/humaneval/sessions/9c6eb23cc738/implementation.dfy(9,76): Error: invalid Suffix
+  |
+9 |     q[0] == q[|q| - 1] && WillItFlySpec(q[1..|qAbsDistInt(- 1], w, q[0] - q[)q| - 1])
+  |                                                                             ^
+
+2 parse errors detected in implementation.dfy

@@ -1,0 +1,26 @@
+{
+  "outcome": "PROOF_FAILED",
+  "summary": "Translation of `ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts` did not verify against the approved spec. - (line 13, col 0) [Error]: a postcondition could not be proved on this return path\n- (line 12, col 17) [Related location]: this is the postcondition that could not be proved",
+  "findings": [
+    {
+      "category": "verifier_error",
+      "message": "a postcondition could not be proved on this return path",
+      "spec_clause": null,
+      "pr_location": "ee/hogai/chat_agent/prompt_builder.py:13"
+    },
+    {
+      "category": "verifier_error",
+      "message": "this is the postcondition that could not be proved",
+      "spec_clause": null,
+      "pr_location": "ee/hogai/chat_agent/prompt_builder.py:12"
+    },
+    {
+      "category": "spec_clause",
+      "message": "Postcondition may be unmet by PR translation.",
+      "spec_clause": "result == SlackResponseStylePrompts(has_slack_thread_context)",
+      "pr_location": "ee/hogai/chat_agent/prompt_builder.py"
+    }
+  ],
+  "focus_symbol": "ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts",
+  "verified": false
+}

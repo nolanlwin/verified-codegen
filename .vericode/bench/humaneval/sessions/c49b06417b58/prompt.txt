@@ -1,0 +1,17 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def triangle_area(a, h):
+    """Given length of a side and high return area for a triangle.
+    >>> triangle_area(5, 3)
+    7.5
+    """
+
+Requirements:
+- The main Dafny method must be named `triangle_area` (PascalCase `TriangleArea` is OK).
+- Define a pure recursive `function TriangleAreaSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == TriangleAreaSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `triangle_area`.

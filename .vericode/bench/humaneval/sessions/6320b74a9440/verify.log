@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/6320b74a9440/implementation.dfy(5,12): Error: possible division by zero
+  |
+5 |   else if n % d == 0 then true
+  |             ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

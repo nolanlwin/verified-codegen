@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def add(x: int, y: int):
+    """Add two numbers x and y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12
+    """
+
+Requirements:
+- The main Dafny method must be named `add` (PascalCase `Add` is OK).
+- Define a pure recursive `function AddSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == AddSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `add`.

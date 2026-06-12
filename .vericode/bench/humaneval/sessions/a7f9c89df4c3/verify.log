@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/a7f9c89df4c3/implementation.dfy(20,27): Error: lower bound out of range
+   |
+20 |   else SuffixOfLengthSpec(s[1..], k)
+   |                            ^
+
+.vericode/bench/humaneval/sessions/a7f9c89df4c3/implementation.dfy(29,31): Error: lower bound out of range
+   |
+29 |     var rest := MaximumSpec(arr[1..], k);
+   |                                ^
+
+
+Dafny program verifier finished with 7 verified, 2 errors

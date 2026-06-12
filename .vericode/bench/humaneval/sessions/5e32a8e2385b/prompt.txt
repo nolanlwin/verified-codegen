@@ -1,0 +1,24 @@
+Implement the following Python function with verified Dafny code.
+
+
+def histogram(test):
+    """Given a string representing a space separated lowercase letters, return a dictionary
+    of the letter with the most repetition and containing the corresponding count.
+    If several letters have the same occurrence, return all of them.
+    
+    Example:
+    histogram('a b c') == {'a': 1, 'b': 1, 'c': 1}
+    histogram('a b b a') == {'a': 2, 'b': 2}
+    histogram('a b c a b') == {'a': 2, 'b': 2}
+    histogram('b b b b a') == {'b': 4}
+    histogram('') == {}
+
+    """
+
+Requirements:
+- The main Dafny method must be named `histogram` (PascalCase `Histogram` is OK).
+- Define a pure recursive `function HistogramSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == HistogramSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `histogram`.

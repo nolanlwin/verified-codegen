@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def x_or_y(n, x, y):
+    """A simple program which should return the value of x if n is 
+    a prime number and should return the value of y otherwise.
+
+    Examples:
+    for x_or_y(7, 34, 12) == 34
+    for x_or_y(15, 8, 5) == 5
+    
+    """
+
+Requirements:
+- The main Dafny method must be named `x_or_y` (PascalCase `XOrY` is OK).
+- Define a pure recursive `function XOrYSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == XOrYSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `x_or_y`.

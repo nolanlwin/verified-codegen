@@ -1,0 +1,25 @@
+Implement the following Python function with verified Dafny code.
+
+
+def encode(message):
+    """
+    Write a function that takes a message, and encodes in such a 
+    way that it swaps case of all letters, replaces all vowels in 
+    the message with the letter that appears 2 places ahead of that 
+    vowel in the english alphabet. 
+    Assume only letters. 
+    
+    Examples:
+    >>> encode('test')
+    'TGST'
+    >>> encode('This is a message')
+    'tHKS KS C MGSSCGG'
+    """
+
+Requirements:
+- The main Dafny method must be named `encode` (PascalCase `Encode` is OK).
+- Define a pure recursive `function EncodeSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == EncodeSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `encode`.

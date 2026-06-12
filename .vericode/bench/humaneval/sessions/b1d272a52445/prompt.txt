@@ -1,0 +1,25 @@
+Implement the following Python function with verified Dafny code.
+
+
+def make_a_pile(n):
+    """
+    Given a positive integer n, you have to make a pile of n levels of stones.
+    The first level has n stones.
+    The number of stones in the next level is:
+        - the next odd number if n is odd.
+        - the next even number if n is even.
+    Return the number of stones in each level in a list, where element at index
+    i represents the number of stones in the level (i+1).
+
+    Examples:
+    >>> make_a_pile(3)
+    [3, 5, 7]
+    """
+
+Requirements:
+- The main Dafny method must be named `make_a_pile` (PascalCase `MakeAPile` is OK).
+- Define a pure recursive `function MakeAPileSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == MakeAPileSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `make_a_pile`.

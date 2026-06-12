@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """ Filter an input list of strings only for ones that contain given substring
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+
+Requirements:
+- The main Dafny method must be named `filter_by_substring` (PascalCase `FilterBySubstring` is OK).
+- Define a pure recursive `function FilterBySubstringSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FilterBySubstringSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `filter_by_substring`.

@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/499b53e3d2c5/implementation.dfy(6,31): Error: index out of range
+  |
+6 |     var diff := game[0] - guess[0];
+  |                                ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

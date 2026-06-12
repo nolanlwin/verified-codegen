@@ -1,0 +1,16 @@
+.vericode/bench/humaneval/sessions/5fb4922ee8f8/internal_spec.dfy(8,16): Error: arguments must have comparable types (got char and string)
+  |
+8 |   c == 'y' || c == "z"
+  |                 ^^
+
+.vericode/bench/humaneval/sessions/5fb4922ee8f8/internal_spec.dfy(16,16): Error: arguments must have comparable types (got char and string)
+   |
+16 |   c == 'Y' || c == "Z"
+   |                 ^^
+
+.vericode/bench/humaneval/sessions/5fb4922ee8f8/internal_spec.dfy(63,2): Warning: assume statement has no {:axiom} annotation
+   |
+63 |   assume false;
+   |   ^^^^^^
+
+2 resolution/type errors detected in internal_spec.dfy

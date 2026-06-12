@@ -1,0 +1,20 @@
+{
+  "outcome": "PROOF_FAILED",
+  "summary": "Translation of `ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts` did not verify against the approved spec. - (line 14, col 30) [Error]: lbrace expected",
+  "findings": [
+    {
+      "category": "verifier_error",
+      "message": "lbrace expected",
+      "spec_clause": null,
+      "pr_location": "ee/hogai/chat_agent/prompt_builder.py:14"
+    },
+    {
+      "category": "spec_clause",
+      "message": "Postcondition may be unmet by PR translation.",
+      "spec_clause": "result == SlackResponseStyleSpec(has_slack_thread_context)",
+      "pr_location": "ee/hogai/chat_agent/prompt_builder.py"
+    }
+  ],
+  "focus_symbol": "ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts",
+  "verified": false
+}

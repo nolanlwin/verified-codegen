@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def count_distinct_characters(string: str) -> int:
+    """ Given a string, find out how many distinct characters (regardless of case) does it consist of
+    >>> count_distinct_characters('xyzXYZ')
+    3
+    >>> count_distinct_characters('Jerry')
+    4
+    """
+
+Requirements:
+- The main Dafny method must be named `count_distinct_characters` (PascalCase `CountDistinctCharacters` is OK).
+- Define a pure recursive `function CountDistinctCharactersSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == CountDistinctCharactersSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `count_distinct_characters`.

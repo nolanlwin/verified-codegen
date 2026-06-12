@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/c49b06417b58/implementation.dfy(4,40): Error: decreases expression must be bounded below by 0
+  |
+4 |   if n == 1 then x else TriangleAreaHalf(x / 2.0, n - 1)
+  |                                         ^
+
+.vericode/bench/humaneval/sessions/c49b06417b58/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n
+  |             ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

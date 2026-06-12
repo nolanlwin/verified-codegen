@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def intersperse(numbers: List[int], delimeter: int) -> List[int]:
+    """ Insert a number 'delimeter' between every two consecutive elements of input list `numbers'
+    >>> intersperse([], 4)
+    []
+    >>> intersperse([1, 2, 3], 4)
+    [1, 4, 2, 4, 3]
+    """
+
+Requirements:
+- The main Dafny method must be named `intersperse` (PascalCase `Intersperse` is OK).
+- Define a pure recursive `function IntersperseSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IntersperseSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `intersperse`.

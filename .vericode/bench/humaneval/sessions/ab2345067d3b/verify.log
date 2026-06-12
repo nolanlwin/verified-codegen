@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/ab2345067d3b/implementation.dfy(15,20): Error: index out of range
+   |
+15 |   else c == alphabet[i] || IsInAlphabet(c, alphabet, i + 1)
+   |                     ^
+
+.vericode/bench/humaneval/sessions/ab2345067d3b/implementation.dfy(22,19): Error: index out of range
+   |
+22 |   else if c == from[i] then to[i]
+   |                    ^
+
+.vericode/bench/humaneval/sessions/ab2345067d3b/implementation.dfy(22,30): Error: index out of range
+   |
+22 |   else if c == from[i] then to[i]
+   |                               ^
+
+
+Dafny program verifier finished with 4 verified, 3 errors

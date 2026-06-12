@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def prime_length(string):
+    """Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    Examples
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False
+    """
+
+Requirements:
+- The main Dafny method must be named `prime_length` (PascalCase `PrimeLength` is OK).
+- Define a pure recursive `function PrimeLengthSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == PrimeLengthSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `prime_length`.

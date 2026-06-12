@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def incr_list(l: list):
+    """Return list with elements incremented by 1.
+    >>> incr_list([1, 2, 3])
+    [2, 3, 4]
+    >>> incr_list([5, 3, 5, 2, 3, 3, 9, 0, 123])
+    [6, 4, 6, 3, 4, 4, 10, 1, 124]
+    """
+
+Requirements:
+- The main Dafny method must be named `incr_list` (PascalCase `IncrList` is OK).
+- Define a pure recursive `function IncrListSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IncrListSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `incr_list`.

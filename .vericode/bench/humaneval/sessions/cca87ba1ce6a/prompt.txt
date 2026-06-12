@@ -1,0 +1,18 @@
+Implement the following Python function with verified Dafny code.
+
+
+def is_equal_to_sum_even(n):
+    """Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers
+    Example
+    is_equal_to_sum_even(4) == False
+    is_equal_to_sum_even(6) == False
+    is_equal_to_sum_even(8) == True
+    """
+
+Requirements:
+- The main Dafny method must be named `is_equal_to_sum_even` (PascalCase `IsEqualToSumEven` is OK).
+- Define a pure recursive `function IsEqualToSumEvenSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IsEqualToSumEvenSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `is_equal_to_sum_even`.

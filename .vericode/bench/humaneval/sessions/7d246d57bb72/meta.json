@@ -1,0 +1,13 @@
+{
+  "session_id": "7d246d57bb72",
+  "status": "failed",
+  "created_at": "2026-06-12T02:57:53.863602Z",
+  "updated_at": "2026-06-12T03:04:03.117443Z",
+  "spec_model": "gpt-5.5",
+  "codegen_model": "gpt-5.5",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 10,
+  "error_message": "Verification failed after 10 retries.",
+  "revision_feedback": []
+}

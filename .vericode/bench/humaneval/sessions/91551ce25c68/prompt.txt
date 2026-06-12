@@ -1,0 +1,29 @@
+Implement the following Python function with verified Dafny code.
+
+
+def closest_integer(value):
+    '''
+    Create a function that takes a value (string) representing a number
+    and returns the closest integer to it. If the number is equidistant
+    from two integers, round it away from zero.
+
+    Examples
+    >>> closest_integer("10")
+    10
+    >>> closest_integer("15.3")
+    15
+
+    Note:
+    Rounding away from zero means that if the given number is equidistant
+    from two integers, the one you should return is the one that is the
+    farthest from zero. For example closest_integer("14.5") should
+    return 15 and closest_integer("-14.5") should return -15.
+    '''
+
+Requirements:
+- The main Dafny method must be named `closest_integer` (PascalCase `ClosestInteger` is OK).
+- Define a pure recursive `function ClosestIntegerSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == ClosestIntegerSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `closest_integer`.

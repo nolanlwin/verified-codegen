@@ -1,0 +1,28 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def same_chars(s0: str, s1: str):
+    """
+    Check if two words have the same characters.
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')
+    True
+    >>> same_chars('abcd', 'dddddddabc')
+    True
+    >>> same_chars('dddddddabc', 'abcd')
+    True
+    >>> same_chars('eabcd', 'dddddddabc')
+    False
+    >>> same_chars('abcd', 'dddddddabce')
+    False
+    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')
+    False
+    """
+
+Requirements:
+- The main Dafny method must be named `same_chars` (PascalCase `SameChars` is OK).
+- Define a pure recursive `function SameCharsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SameCharsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `same_chars`.

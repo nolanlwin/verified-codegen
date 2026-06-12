@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List, Tuple
+
+
+def rolling_max(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+    [1, 2, 3, 3, 3, 4, 4]
+    """
+
+Requirements:
+- The main Dafny method must be named `rolling_max` (PascalCase `RollingMax` is OK).
+- Define a pure recursive `function RollingMaxSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == RollingMaxSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `rolling_max`.

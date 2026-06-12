@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/f2684cfade76/implementation.dfy(4,32): Error: index out of range
+  |
+4 |   if j == |sub| then true else s[j] == sub[j] && PrefixMatches(s, sub, j + 1)
+  |                                 ^
+
+.vericode/bench/humaneval/sessions/f2684cfade76/implementation.dfy(4,42): Error: index out of range
+  |
+4 |   if j == |sub| then true else s[j] == sub[j] && PrefixMatches(s, sub, j + 1)
+  |                                           ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

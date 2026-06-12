@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/0da07ef9edec/implementation.dfy(4,36): Error: decreases expression must be bounded below by 0
+  |
+4 |   if exp == 0 then 1 else base * Pow(base, exp - 1)
+  |                                     ^
+
+.vericode/bench/humaneval/sessions/0da07ef9edec/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases exp
+  |             ^^^
+
+.vericode/bench/humaneval/sessions/0da07ef9edec/implementation.dfy(12,26): Error: decreases expression must be bounded below by 0
+   |
+12 |   else IsSimplePowerSearch(x, n, k - 1)
+   |                           ^
+
+.vericode/bench/humaneval/sessions/0da07ef9edec/implementation.dfy(8,12): Related location: this decreases clause was not satisfied
+  |
+8 |   decreases k
+  |             ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

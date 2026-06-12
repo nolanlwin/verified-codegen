@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+def find_max(words):
+    """Write a function that accepts a list of strings.
+    The list contains different words. Return the word with maximum number
+    of unique characters. If multiple strings have maximum number of unique
+    characters, return the one which comes first in lexicographical order.
+
+    find_max(["name", "of", "string"]) == "string"
+    find_max(["name", "enam", "game"]) == "enam"
+    find_max(["aaaaaaa", "bb" ,"cc"]) == ""aaaaaaa"
+    """
+
+Requirements:
+- The main Dafny method must be named `find_max` (PascalCase `FindMax` is OK).
+- Define a pure recursive `function FindMaxSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FindMaxSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `find_max`.

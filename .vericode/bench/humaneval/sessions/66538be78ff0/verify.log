@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/66538be78ff0/implementation.dfy(6,18): Error: index out of range
+  |
+6 |   else if brackets[i] == "("[0] then
+  |                   ^
+
+
+Dafny program verifier finished with 2 verified, 1 error

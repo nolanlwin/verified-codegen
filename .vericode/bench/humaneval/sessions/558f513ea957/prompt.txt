@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def words_string(s):
+    """
+    You will be given a string of words separated by commas or spaces. Your task is
+    to split the string into words and return an array of the words.
+    
+    For example:
+    words_string("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
+    words_string("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
+    """
+
+Requirements:
+- The main Dafny method must be named `words_string` (PascalCase `WordsString` is OK).
+- Define a pure recursive `function WordsStringSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == WordsStringSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `words_string`.

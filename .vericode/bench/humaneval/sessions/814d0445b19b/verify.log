@@ -1,0 +1,42 @@
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(5,28): Error: index out of range
+  |
+5 |   else if i % 3 == 0 then [l[i]] + TakeThirdValues(l, i + 1)
+  |                             ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(6,22): Error: decreases expression must be bounded below by 0
+  |
+6 |   else TakeThirdValues(l, i + 1)
+  |                       ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(2,16): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases |l| - i
+  |                 ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(29,54): Error: index out of range
+   |
+29 |     if k < |sortedThirdValues| then [sortedThirdValues[k]] + SortThirdSpec(l, sortedThirdValues, i + 1, k + 1)
+   |                                                       ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(29,74): Error: decreases expression must be bounded below by 0
+   |
+29 |     if k < |sortedThirdValues| then [sortedThirdValues[k]] + SortThirdSpec(l, sortedThirdValues, i + 1, k + 1)
+   |                                                                           ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(25,16): Related location: this decreases clause was not satisfied
+   |
+25 |   decreases |l| - i
+   |                 ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(30,11): Error: index out of range
+   |
+30 |     else [l[i]] + SortThirdSpec(l, sortedThirdValues, i + 1, k)
+   |            ^
+
+.vericode/bench/humaneval/sessions/814d0445b19b/implementation.dfy(31,9): Error: index out of range
+   |
+31 |   else [l[i]] + SortThirdSpec(l, sortedThirdValues, i + 1, k)
+   |          ^
+
+
+Dafny program verifier finished with 3 verified, 6 errors

@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/7cdc1566e9c7/implementation.dfy(27,3): Error: lower bound out of range
+   |
+27 |   s[start..] == "txt" || s[start..] == "exe" || s[start..] == "dll"
+   |    ^
+
+
+Dafny program verifier finished with 5 verified, 1 error

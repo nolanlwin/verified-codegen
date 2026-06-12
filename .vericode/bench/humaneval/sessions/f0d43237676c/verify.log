@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/f0d43237676c/implementation.dfy(26,57): Error: lower bound out of range
+   |
+26 |     var tailBest := StrongestExtensionNameSpec(extensions[1..]);
+   |                                                          ^
+
+
+Dafny program verifier finished with 4 verified, 1 error

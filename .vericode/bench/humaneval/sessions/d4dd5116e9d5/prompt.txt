@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+def minSubArraySum(nums):
+    """
+    Given an array of integers nums, find the minimum sum of any non-empty sub-array
+    of nums.
+    Example
+    minSubArraySum([2, 3, 4, 1, 2, 4]) == 1
+    minSubArraySum([-1, -2, -3]) == -6
+    """
+
+Requirements:
+- The main Dafny method must be named `minSubArraySum` (PascalCase `Minsubarraysum` is OK).
+- Define a pure recursive `function MinsubarraysumSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == MinsubarraysumSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `minSubArraySum`.

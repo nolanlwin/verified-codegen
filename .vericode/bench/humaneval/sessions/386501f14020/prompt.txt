@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def sort_numbers(numbers: str) -> str:
+    """ Input is a space-delimited string of numberals from 'zero' to 'nine'.
+    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.
+    Return the string with numbers sorted from smallest to largest
+    >>> sort_numbers('three one five')
+    'one three five'
+    """
+
+Requirements:
+- The main Dafny method must be named `sort_numbers` (PascalCase `SortNumbers` is OK).
+- Define a pure recursive `function SortNumbersSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SortNumbersSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `sort_numbers`.

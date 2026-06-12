@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def remove_duplicates(numbers: List[int]) -> List[int]:
+    """ From a list of integers, remove all elements that occur more than once.
+    Keep order of elements left the same as in the input.
+    >>> remove_duplicates([1, 2, 3, 2, 4])
+    [1, 3, 4]
+    """
+
+Requirements:
+- The main Dafny method must be named `remove_duplicates` (PascalCase `RemoveDuplicates` is OK).
+- Define a pure recursive `function RemoveDuplicatesSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == RemoveDuplicatesSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `remove_duplicates`.

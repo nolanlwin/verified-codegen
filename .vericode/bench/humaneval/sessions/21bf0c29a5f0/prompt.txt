@@ -1,0 +1,18 @@
+Implement the following Python function with verified Dafny code.
+
+
+def string_to_md5(text):
+    """
+    Given a string 'text', return its md5 hash equivalent string.
+    If 'text' is an empty string, return None.
+
+    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'
+    """
+
+Requirements:
+- The main Dafny method must be named `string_to_md5` (PascalCase `StringToMd5` is OK).
+- Define a pure recursive `function StringToMd5Spec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == StringToMd5Spec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `string_to_md5`.

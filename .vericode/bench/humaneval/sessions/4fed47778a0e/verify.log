@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/4fed47778a0e/implementation.dfy(12,19): Error: index out of range
+   |
+12 |   else if a[0] == b[0] then "0" + StringXorSpec(a[1..], b[1..])
+   |                    ^
+
+
+Dafny program verifier finished with 2 verified, 1 error

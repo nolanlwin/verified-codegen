@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/d4dd5116e9d5/implementation.dfy(11,46): Error: lower bound out of range
+   |
+11 |     var tailMinPrefix := MinPrefixSumSpec(nums[1..]);
+   |                                               ^
+
+.vericode/bench/humaneval/sessions/d4dd5116e9d5/implementation.dfy(21,41): Error: lower bound out of range
+   |
+21 |     var inTail := MinsubarraysumSpec(nums[1..]);
+   |                                          ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

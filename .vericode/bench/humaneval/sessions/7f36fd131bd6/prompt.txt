@@ -1,0 +1,23 @@
+Implement the following Python function with verified Dafny code.
+
+
+def special_factorial(n):
+    """The Brazilian factorial is defined as:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    where n > 0
+
+    For example:
+    >>> special_factorial(4)
+    288
+
+    The function will receive an integer as input and should return the special
+    factorial of this integer.
+    """
+
+Requirements:
+- The main Dafny method must be named `special_factorial` (PascalCase `SpecialFactorial` is OK).
+- Define a pure recursive `function SpecialFactorialSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SpecialFactorialSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `special_factorial`.

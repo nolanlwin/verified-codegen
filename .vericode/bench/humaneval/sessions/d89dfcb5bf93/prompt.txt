@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def median(l: list):
+    """Return median of elements in the list l.
+    >>> median([3, 1, 2, 4, 5])
+    3
+    >>> median([-10, 4, 6, 1000, 10, 20])
+    15.0
+    """
+
+Requirements:
+- The main Dafny method must be named `median` (PascalCase `Median` is OK).
+- Define a pure recursive `function MedianSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == MedianSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `median`.

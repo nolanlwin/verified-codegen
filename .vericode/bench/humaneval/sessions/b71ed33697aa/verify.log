@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/b71ed33697aa/implementation.dfy(5,23): Error: decreases clause might not decrease
+  |
+5 |   else ReverseDigitsAux(x / 10, acc * 10 + x % 10)
+  |                        ^
+
+.vericode/bench/humaneval/sessions/b71ed33697aa/implementation.dfy(5,23): Error: decreases expression must be bounded below by 0
+  |
+5 |   else ReverseDigitsAux(x / 10, acc * 10 + x % 10)
+  |                        ^
+
+.vericode/bench/humaneval/sessions/b71ed33697aa/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases x
+  |             ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

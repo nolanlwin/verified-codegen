@@ -1,0 +1,31 @@
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(23,4): Error: unresolved identifier: GetOddCollatzSpecOne
+   |
+23 |     GetOddCollatzSpecOne();
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(23,24): Error: expected method call, found expression
+   |
+23 |     GetOddCollatzSpecOne();
+   |                         ^
+
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(34,4): Error: unresolved identifier: GetOddCollatzSpecEven
+   |
+34 |     GetOddCollatzSpecEven(n);
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(34,25): Error: expected method call, found expression
+   |
+34 |     GetOddCollatzSpecEven(n);
+   |                          ^
+
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(43,4): Error: unresolved identifier: GetOddCollatzSpecOdd
+   |
+43 |     GetOddCollatzSpecOdd(n);
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+.vericode/bench/humaneval/sessions/e7f55c0ea625/implementation.dfy(43,24): Error: expected method call, found expression
+   |
+43 |     GetOddCollatzSpecOdd(n);
+   |                         ^
+
+6 resolution/type errors detected in implementation.dfy

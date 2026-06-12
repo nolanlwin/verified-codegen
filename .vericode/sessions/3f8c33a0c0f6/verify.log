@@ -1,0 +1,6 @@
+.vericode/sessions/3f8c33a0c0f6/implementation.dfy(10,15): Error: unresolved identifier: SLACK_RESPONSE_STYLE_PROMPT
+   |
+10 |     result := [SLACK_RESPONSE_STYLE_PROMPT];
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1 resolution/type errors detected in implementation.dfy

@@ -1,0 +1,16 @@
+.vericode/bench/humaneval/sessions/47f8d2138874/internal_spec.dfy(54,7): Error: the two branches of an if-then-else expression must have the same type (got string and char)
+   |
+54 |   else if c == 'Z' then "z"
+   |        ^^
+
+.vericode/bench/humaneval/sessions/47f8d2138874/internal_spec.dfy(1,9): Error: Function body type mismatch (expected char, got seq<char>)
+  |
+1 | function FlipChar(c: char): char
+  |          ^^^^^^^^
+
+.vericode/bench/humaneval/sessions/47f8d2138874/internal_spec.dfy(67,2): Warning: assume statement has no {:axiom} annotation
+   |
+67 |   assume false;
+   |   ^^^^^^
+
+2 resolution/type errors detected in internal_spec.dfy

@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/0c6fab2650a7/implementation.dfy(27,12): Error: index out of range
+   |
+27 |   else if (a[i] as int) < (b[i] as int) then true
+   |             ^
+
+.vericode/bench/humaneval/sessions/0c6fab2650a7/implementation.dfy(27,28): Error: index out of range
+   |
+27 |   else if (a[i] as int) < (b[i] as int) then true
+   |                             ^
+
+.vericode/bench/humaneval/sessions/0c6fab2650a7/implementation.dfy(49,23): Error: index out of range
+   |
+49 |   else BetterWord(words[0], FindMaxSpec(words[1..]))
+   |                        ^
+
+
+Dafny program verifier finished with 4 verified, 3 errors

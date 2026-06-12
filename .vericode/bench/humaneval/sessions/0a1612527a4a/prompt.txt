@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """ Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separate_paren_groups('( ) (( )) (( )( ))')
+    ['()', '(())', '(()())']
+    """
+
+Requirements:
+- The main Dafny method must be named `separate_paren_groups` (PascalCase `SeparateParenGroups` is OK).
+- Define a pure recursive `function SeparateParenGroupsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SeparateParenGroupsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `separate_paren_groups`.

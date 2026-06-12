@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/2b23f3346f7f/implementation.dfy(4,70): Error: decreases expression must be bounded below by 0
+  |
+4 |   if need == 0 || remaining == 0 then [number, remaining] else EatSpec(number + 1, need - 1, remaining - 1)
+  |                                                                       ^
+
+.vericode/bench/humaneval/sessions/2b23f3346f7f/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases need
+  |             ^^^^
+
+
+Dafny program verifier finished with 2 verified, 1 error

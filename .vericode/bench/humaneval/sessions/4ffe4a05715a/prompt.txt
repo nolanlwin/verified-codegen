@@ -1,0 +1,29 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def is_prime(n):
+    """Return true if a given number is prime, and false otherwise.
+    >>> is_prime(6)
+    False
+    >>> is_prime(101)
+    True
+    >>> is_prime(11)
+    True
+    >>> is_prime(13441)
+    True
+    >>> is_prime(61)
+    True
+    >>> is_prime(4)
+    False
+    >>> is_prime(1)
+    False
+    """
+
+Requirements:
+- The main Dafny method must be named `is_prime` (PascalCase `IsPrime` is OK).
+- Define a pure recursive `function IsPrimeSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IsPrimeSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `is_prime`.

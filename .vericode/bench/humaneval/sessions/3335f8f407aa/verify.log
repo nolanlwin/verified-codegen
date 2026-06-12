@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/3335f8f407aa/implementation.dfy(7,11): Error: index out of range
+  |
+7 |     (if arr[i] > arr[next] then 1 else 0) + MoveOneBallDropCount(arr, i + 1)
+  |            ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

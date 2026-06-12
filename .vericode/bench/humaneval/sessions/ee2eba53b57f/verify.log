@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/ee2eba53b57f/implementation.dfy(16,27): Error: decreases expression must be bounded below by 0
+   |
+16 |   else RoundAreaCentsSearch(d, k + 1, limit)
+   |                            ^
+
+.vericode/bench/humaneval/sessions/ee2eba53b57f/implementation.dfy(12,18): Related location: this decreases clause was not satisfied
+   |
+12 |   decreases limit - k
+   |                   ^
+
+
+Dafny program verifier finished with 2 verified, 1 error

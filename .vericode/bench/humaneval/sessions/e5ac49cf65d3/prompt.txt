@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List, Tuple
+
+
+def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+    """ From a supplied list of numbers (of length at least two) select and return two that are the closest to each
+    other and return them in order (smaller number, larger number).
+    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])
+    (2.0, 2.2)
+    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])
+    (2.0, 2.0)
+    """
+
+Requirements:
+- The main Dafny method must be named `find_closest_elements` (PascalCase `FindClosestElements` is OK).
+- Define a pure recursive `function FindClosestElementsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FindClosestElementsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `find_closest_elements`.

@@ -1,0 +1,183 @@
+GitHub PR #51418: fix: add error logging to agentic provisioning endpoints
+
+Author: MattBro
+
+URL: https://github.com/PostHog/posthog/pull/51418
+
+PR description:
+## Problem
+
+`_error_response` in the agentic provisioning views has no logging, making it impossible to diagnose 400/401 errors from production logs. We're seeing 401s on `/api/agentic/provisioning/resources` and can't tell why.
+
+## Changes
+
+Added `logger.warning` to `_error_response` so all error responses from provisioning endpoints are logged with the error code and message.
+
+## How did you test this code
+
+Verified in production logs that `POST /api/agentic/provisioning/resources` was returning 401 with no application-level log entry explaining the cause.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Verification focus: ee/api/agentic_provisioning/views.py:_error_response (python)
+Scoped source:
+```python
+def _error_response(code: str, message: str, resource_id: str = "", status: int = 400) -> Response:
+    logger.warning("stripe_app.error_response", code=code, message=message, resource_id=resource_id, status=status)
+    return Response({"status": "error", "id": resource_id, "error": {"code": code, "message": message}}, status=status)
+
+
+```
+
+Changed file: ee/api/agentic_provisioning/signature.py (python)
+
+Diff hunk:
+@@ -23,10 +23,7 @@
+ 
+ 
+ def verify_api_version(request: Request) -> Response | None:
+-    """Check the API-Version header matches a supported version.
+-
+-    Returns None if valid, or an error Response if not.
+-    """
++    """Check the API-Version header matches a supported version."""
+     api_version = request.META.get("HTTP_API_VERSION", "")
+     if api_version not in SUPPORTED_VERSIONS:
+         endpoint = request.path
+
+PR comment (@greptile-apps[bot]): <!-- greptile_failed_comments -->
+<details><summary><h3>Comments Outside Diff (1)</h3></summary>
+
+1. `ee/api/agentic_provisioning/signature.py`, line 19-21 ([link](https://github.com/posthog/posthog/blob/a1c98478a8713bc7ec0131d4badb860c52f2661c/ee/api/agentic_provisioning/signature.py#L19-L21)) 
+
+   <a href="#"><img alt="P2" src="https://greptile-static-assets.s3.amazonaws.com/badges/p2.svg?v=7" align="top"></a> **Unused constants after `verify_api_version` removal**
+
+   `API_VERSION` and `API_VERSION_HEADER` are now dead code — they were only referenced inside `verify_api_version`, which has been deleted. Neither constant is imported in `views.py` or anywhere else. Per the simplicity rule of "no superfluous parts", they should be removed.
+
+   
+
+   <details><summary>Prompt To Fix With AI</summary>
+
+   `````markdown
+   This is a comment left during a code review.
+   Path: ee/api/agentic_provisioning/signature.py
+   Line: 19-21
+
+   Comment:
+   **Unused constants after `verify_api_version` removal**
+
+   `API_VERSION` and `API_VERSION_HEADER` are now dead code — they were only referenced inside `verify_api_version`, which has been deleted. Neither constant is imported in `views.py` or anywhere else. Per the simplicity rule of "no superfluous parts", they should be removed.
+
+   
+
+   How can I resolve this? If you propose a fix, please make it concise.
+   `````
+   </details>
+
+</details>
+
+<!-- /greptile_failed_comments -->
+
+<details><summary>Prompt To Fix All With AI</summary>
+
+`````markdown
+This is a comment left during a code review.
+Path: ee/api/agentic_provisioning/views.py
+Line: 164-165
+
+Comment:
+**`account_requests` now has no authentication**
+
+After this PR, `account_requests` is the only provisioning endpoint with zero authentication. All other endpoints still call `verify_stripe_signature` as their auth layer, but `account_requests` never had it — it only had `verify_api_version`. Removing `verify_api_version` here leaves the endpoint completely open.
+
+An unauthenticated caller can now:
+- Trigger account creation for arbitrary email addresses
+- Force existing users through an OAuth consent redirect
+
+The PR description says "The HMAC signature is the real authentication layer", which is correct for the other endpoints — but `account_requests` does not call `verify_stripe_signature`. Should it be added here, or is there a specific reason this endpoint is intentionally unauthenticated? A comment explaining the decision would help clarify intent.
+
+**Rule Used:** Add inline comments to clarify the purpose of sign... ([source](https://app.greptile.com/review/custom-context?memory=4d5b48c5-045d-4693-9cd9-4081bb19508b))
+
+**Learnt From**
+[PostHog/posthog#32083](https://github.com/PostHog/posthog/pull/32083)
+
+How can I resolve this? If you propose a fix, please make it concise.
+
+---
+
+This is a comment left during a code review.
+Path: ee/api/agentic_provisioning/signature.py
+Line: 19-21
+
+Comment:
+**Unused constants after `verify_api_version` removal**
+
+`API_VERSION` and `API_VERSION_HEADER` are now dead code — they were only referenced inside `verify_api_version`, which has been deleted. Neither constant is imported in `views.py` or anywhere else. Per the simplicity rule of "no superfluous parts", they should be removed.
+
+```suggestion
+SIGNATURE_HEADER = "Stripe-Signature"
+MAX_TIMESTAMP_DRIFT_SECONDS = 300
+```
+
+How can I resolve this? If you propose a fix, please make it concise.
+`````
+
+</details>
+
+<sub>Last reviewed commit: ["fix: remove API-Vers..."](https://github.com/posthog/posthog/commit/a1c98478a8713bc7ec0131d4badb860c52f2661c)</sub>
+
+PR comment (@MattBro): `account_requests` is authenticated via the `@stripe_region_proxy(strategy="body_region")` decorator, which calls `verify_stripe_signature(request)` before the view runs. See `region_proxy.py` line 130.
+
+PR comment (@github-actions[bot]): <!-- playwright-report-comment -->
+🎭 Playwright report · [View test results →](https://pr-51418.playwright-report-59d.pages.dev)
+
+⚠️ **1 flaky test:**
+- Creating a SQL insight with a variable and overriding it on a dashboard (chromium)
+
+
+*These issues are not necessarily caused by your changes.*
+*Annoyed by this comment? Help fix flakies and failures and it'll disappear!*
+
+PR comment (@MattBro): Closing - will reopen with just the error logging change, without the version check removal.
+
+Review comment on ee/api/agentic_provisioning/views.py:172 (@greptile-apps[bot]): <a href="#"><img alt="P1" src="https://greptile-static-assets.s3.amazonaws.com/badges/p1.svg?v=7" align="top"></a> **`account_requests` now has no authentication**
+
+After this PR, `account_requests` is the only provisioning endpoint with zero authentication. All other endpoints still call `verify_stripe_signature` as their auth layer, but `account_requests` never had it — it only had `verify_api_version`. Removing `verify_api_version` here leaves the endpoint completely open.
+
+An unauthenticated caller can now:
+- Trigger account creation for arbitrary email addresses
+- Force existing users through an OAuth consent redirect
+
+The PR description says "The HMAC signature is the real authentication layer", which is correct for the other endpoints — but `account_requests` does not call `verify_stripe_signature`. Should it be added here, or is there a specific reason this endpoint is intentionally unauthenticated? A comment explaining the decision would help clarify intent.
+
+**Rule Used:** Add inline comments to clarify the purpose of sign... ([source](https://app.greptile.com/review/custom-context?memory=4d5b48c5-045d-4693-9cd9-4081bb19508b))
+
+**Learnt From**
+[PostHog/posthog#32083](https://github.com/PostHog/posthog/pull/32083)
+
+<details><summary>Prompt To Fix With AI</summary>
+
+`````markdown
+This is a comment left during a code review.
+Path: ee/api/agentic_provisioning/views.py
+Line: 164-165
+
+Comment:
+**`account_requests` now has no authentication**
+
+After this PR, `account_requests` is the only provisioning endpoint with zero authentication. All other endpoints still call `verify_stripe_signature` as their auth layer, but `account_requests` never had it — it only had `verify_api_version`. Removing `verify_api_version` here leaves the endpoint completely open.
+
+An unauthenticated caller can now:
+- Trigger account creation for arbitrary email addresses
+- Force existing users through an OAuth consent redirect
+
+The PR description says "The HMAC signature is the real authentication layer", which is correct for the other endpoints — but `account_requests` does not call `verify_stripe_signature`. Should it be added here, or is there a specific reason this endpoint is intentionally unauthenticated? A comment explaining the decision would help clarify intent.
+
+**Rule Used:** Add inline comments to clarify the purpose of sign... ([source](https://app.greptile.com/review/custom-context?memory=4d5b48c5-045d-4693-9cd9-4081bb19508b))
+
+**Learnt From**
+[PostHog/posthog#32083](https://github.com/PostHog/posthog/pull/32083)
+
+How can I resolve this? If you propose a fix, please make it concise.
+`````
+</details>

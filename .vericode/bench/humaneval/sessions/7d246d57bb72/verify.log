@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/7d246d57bb72/implementation.dfy(24,21): Error: index out of range
+   |
+24 |   if IsGoodParens(lst[0] + lst[1]) || IsGoodParens(lst[1] + lst[0]) then "Yes" else "No"
+   |                      ^
+
+.vericode/bench/humaneval/sessions/7d246d57bb72/implementation.dfy(24,30): Error: index out of range
+   |
+24 |   if IsGoodParens(lst[0] + lst[1]) || IsGoodParens(lst[1] + lst[0]) then "Yes" else "No"
+   |                               ^
+
+
+Dafny program verifier finished with 6 verified, 2 errors

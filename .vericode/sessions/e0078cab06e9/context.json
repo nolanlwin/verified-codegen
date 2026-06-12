@@ -1,0 +1,34 @@
+{
+  "repo": "PostHog/posthog",
+  "pr_number": 51418,
+  "title": "fix: add error logging to agentic provisioning endpoints",
+  "body": "Added logger.warning to _error_response so all error responses from provisioning endpoints are logged. We need production logs to diagnose 401s.",
+  "author": "MattBro",
+  "url": "https://github.com/PostHog/posthog/pull/51418",
+  "base_sha": "",
+  "head_sha": "",
+  "files": [
+    {
+      "path": "ee/api/agentic_provisioning/views.py",
+      "language": "python",
+      "patch": "",
+      "before": "",
+      "after": "from rest_framework.response import Response\nimport structlog\nlogger = structlog.get_logger(__name__)\n\ndef _error_response(code: str, message: str, resource_id: str = \"\", status: int = 400) -> Response:\n    logger.warning(\"stripe_app.error_response\", code=code, message=message, resource_id=resource_id, status=status)\n    return Response({\"status\": \"error\", \"id\": resource_id, \"error\": {\"code\": code, \"message\": message}}, status=status)\n",
+      "status": "modified"
+    }
+  ],
+  "comments": [],
+  "review_comments": [],
+  "focus": {
+    "path": "ee/api/agentic_provisioning/views.py",
+    "name": "_error_response",
+    "language": "python",
+    "kind": "function",
+    "source": "def _error_response(code: str, message: str, resource_id: str = \"\", status: int = 400) -> Response:\n    logger.warning(\"stripe_app.error_response\", code=code, message=message, resource_id=resource_id, status=status)\n    return Response({\"status\": \"error\", \"id\": resource_id, \"error\": {\"code\": code, \"message\": message}}, status=status)",
+    "start_line": 5
+  },
+  "verification_scope": "ee/api/agentic_provisioning/views.py:_error_response",
+  "intent_summary": "",
+  "scope_notes": [],
+  "pr_shape": "observability"
+}

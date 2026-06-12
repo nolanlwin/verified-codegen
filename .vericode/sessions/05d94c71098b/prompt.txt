@@ -1,0 +1,183 @@
+GitHub PR #63160: feat(llma): make PostHog AI concise when replying in Slack
+
+Author: timgl
+
+URL: https://github.com/PostHog/posthog/pull/63160
+
+PR description:
+## Problem
+
+The PostHog Slack app shares the same chat agent system prompt as the web app, and that prompt has no length guidance — so answers in Slack came out as long as web answers. Slack readers want short, skimmable replies, and users reported that even a few bullet points read as too long for a chat thread.
+
+**Why:** direct user feedback that the Slack bot is too verbose — a one-line answer to a simple question should stay one line.
+
+## Changes
+
+Adds a Slack-only response-style block to the chat agent system prompt:
+
+- Defaults to a **single sentence** for simple questions; brief by default otherwise.
+- Treats bullet lists as the exception, not the norm; prefers plain prose over headers and tables.
+- Drops preamble, question restatement, and sign-offs.
+- Framed as a default, not a hard rule — if the user (or their saved memory) asks for more depth or a different format, that still wins.
+
+The block is injected **only when the request originates from a Slack thread** (detected via `slack_thread_context` in the run config), so the web app is unaffected. A new `_get_extra_system_prompts(config)` hook on the base prompt builder carries it, and both the chat and plan builders opt in.
+
+## How did you test this code?
+
+I'm an agent. I added an automated parameterized test (`test_prompt_builder_includes_slack_response_style_only_from_slack`) asserting the block is present when a Slack thread context is in the config and absent otherwise, for both the chat and plan prompt builders. I did not run the suite — the Django/ClickHouse test environment wasn't available in this session — but all changed files compile.
+
+## Automatic notifications
+
+- [ ] Publish to changelog?
+- [ ] Alert Sales and Marketing teams?
+
+## Docs update
+
+No docs change needed.
+
+## 🤖 Agent context
+
+**Autonomy:** Human-driven (agent-assisted)
+
+Authored by the PostHog Slack app (Claude Code) from a Slack thread where a customer reported the bot being too wordy. The targeted approach — a surface-conditional prompt keyed on `slack_thread_context` — was chosen over editing the shared base prompt so the web experience stays unchanged, and over per-org config so it ships as a sane default that memory and explicit user requests can still override.
+
+---
+*Created with [PostHog Code](https://posthog.com/code?ref=pr) from a [Slack thread](https://posthog.slack.com/archives/C099PD4SYH1/p1781135753193429?thread_ts=1781135753.193429&cid=C099PD4SYH1)*
+
+Verification focus: ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts (python)
+Scoped source:
+```python
+def _slack_response_style_prompts(config: RunnableConfig) -> list[str]:
+    """Slack threads want shorter, skimmable answers than the web app, so nudge the agent to be
+    concise only when the request actually originates from Slack."""
+    if (config.get("configurable") or {}).get("slack_thread_context") is not None:
+        return [SLACK_RESPONSE_STYLE_PROMPT]
+    return []
+
+
+```
+
+Changed file: ee/hogai/chat_agent/prompts/__init__.py (python)
+
+Diff hunk:
+@@ -7,6 +7,7 @@
+     PROACTIVENESS_PROMPT,
+     PRODUCT_ADVOCACY_PROMPT,
+     ROLE_PROMPT,
++    SLACK_RESPONSE_STYLE_PROMPT,
+     SLASH_COMMANDS_PROMPT,
+     SWITCHING_MODES_PROMPT,
+     TASK_MANAGEMENT_PROMPT,
+@@ -42,6 +43,7 @@
+     "ROOT_BILLING_CONTEXT_WITH_ACCESS_PROMPT",
+     "ROOT_BILLING_CONTEXT_WITH_NO_ACCESS_PROMPT",
+     "ROOT_GROUPS_PROMPT",
++    "SLACK_RESPONSE_STYLE_PROMPT",
+     "SLASH_COMMANDS_PROMPT",
+     "SWITCHING_MODES_PROMPT",
+     "TASK_MANAGEMENT_PROMPT",
+
+Changed file: ee/hogai/chat_agent/prompts/base.py (python)
+
+Diff hunk:
+@@ -247,6 +247,16 @@
+ </tool_usage_policy>
+ """.strip()
+ 
++SLACK_RESPONSE_STYLE_PROMPT = """
++<slack_response_style>
++You are responding in a Slack thread, not the PostHog web app. Slack readers want short, skimmable answers and find long, prose-heavy replies hard to read.
++- When the answer is really simple, just say it in a short sentence or two with no extra context.
++- When there is actual information to convey, use bullet points – roughly three, or more when there genuinely is a lot to cover. Keep each bullet short and skimmable.
++- Lead with the answer. Skip preamble, restating the question, and sign-offs, and avoid long sections, multiple headers, and tables.
++This is the default, not a hard rule: if the user (or their saved memory) asks for more depth or a different format, follow that instead.
++</slack_response_style>
++""".strip()
++
+ AGENT_PROMPT = """
+ {{{role}}}
+
+Changed file: ee/hogai/chat_agent/test/test_mode_manager.py (python)
+
+Diff hunk:
+@@ -314,6 +314,43 @@ async def test_plan_prompt_builder_includes_slash_commands(self):
+         self.assertIn("`/usage`", system_prompt)
+         self.assertIn("Do not claim this command is fabricated", system_prompt)
+ 
++    @parameterized.expand(
++        [
++            # (builder_class, from_slack, should_contain_slack_style)
++            ["chat_from_slack", ChatAgentPromptBuilder, True, True],
++            ["chat_from_web", ChatAgentPromptBuilder, False, False],
++            ["plan_from_slack", ChatAgentPlanPromptBuilder, True, True],
++            ["plan_from_web", ChatAgentPlanPromptBuilder, False, False],
++        ]
++    )
++    async def test_prompt_builder_includes_slack_response_style_only_from_slack(
++        self, _name, builder_class, from_slack, should_contain
++    ):
++        configurable: dict = {"slack_thread_context": object()} if from_slack else {}
++        context_manager = AssistantContextManager(
++            team=self.team, user=self.user, config=RunnableConfig(configurable={})
++        )
++        prompt_builder = builder_class(team=self.team, user=self.user, context_manager=context_manager)
++
++        with (
++            patch.object(prompt_builder, "_get_billing_prompt", new=AsyncMock(return_value="")),
++            patch.object(prompt_builder, "_aget_core_memory_text", new=AsyncMock(return_value="")),
++            patch.object(context_manager, "get_group_names", new=AsyncMock(return_value=[])),
++            patch("ee.hogai.chat_agent.prompt_builder._get_default_tools_prompt", new=AsyncMock(return_value="")),
++            patch("ee.hogai.chat_agent.prompt_builder._get_modes_prompt", new=AsyncMock(return_value="")),
++            patch("ee.hogai.chat_agent.mode_manager.get_execution_mode_registry", return_value={}),
++        ):
++            messages = await prompt_builder.get_prompts(
++                AssistantState(messages=[]), RunnableConfig(configurable=configurable)
++            )
++
++        system_prompt = "\n\n".join(str(message.content) for message in messages if isinstance(message, SystemMessage))
++
++        if should_contain:
++            self.assertIn("responding in a Slack thread", system_prompt)
++        else:
++            self.assertNotIn("responding in a Slack thread", system_prompt)
++
+ 
+ class TestChatAgentModeManagerPlanMode(BaseTest):
+     def test_plan_mode_sets_supermode_and_mode(self):
+
+Changed file: ee/hogai/core/agent_modes/prompt_builder.py (python)
+
+Diff hunk:
+@@ -92,6 +92,10 @@ def _get_core_memory_prompt(self) -> str:
+         """Return the core memory prompt template. Override in subclasses if needed."""
+         return CORE_MEMORY_PROMPT
+ 
++    def _get_extra_system_prompts(self, config: RunnableConfig) -> list[str]:
++        """Surface-specific system prompts appended after the core memory prompt. Override in subclasses."""
++        return []
++
+     async def get_prompts(self, state: AssistantState, config: RunnableConfig) -> list[BaseMessage]:
+         billing_prompt, core_memory, groups = await asyncio.gather(
+             self._get_billing_prompt(),
+@@ -105,10 +109,13 @@ async def get_prompts(self, state: AssistantState, config: RunnableConfig) -> li
+             "billing_context": billing_prompt,
+         }
+ 
++        messages: list[tuple[str, str]] = [
++            ("system", self._get_system_prompt()),
++            ("system", self._get_core_memory_prompt()),
++            *(("system", prompt) for prompt in self._get_extra_system_prompts(config)),
++        ]
++
+         return ChatPromptTemplate.from_messages(
+-            [
+-                ("system", self._get_system_prompt()),
+-                ("system", self._get_core_memory_prompt()),
+-            ],
++            messages,
+             template_format="mustache",
+         ).format_messages(**format_args)
+
+PR comment (@greptile-apps[bot]): <!-- greptile_other_comments_section -->
+
+<sub>Reviews (1): Last reviewed commit: ["feat(llma): make PostHog AI concise when..."](https://github.com/posthog/posthog/commit/354d6c6f8f01fab8dccba198e62b2b799ee3144a) | [Re-trigger Greptile](https://app.greptile.com/api/retrigger?id=37150143)</sub>

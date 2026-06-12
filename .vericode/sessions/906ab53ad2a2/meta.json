@@ -1,0 +1,18 @@
+{
+  "session_id": "906ab53ad2a2",
+  "status": "failed",
+  "created_at": "2026-06-12T07:17:01.248302Z",
+  "updated_at": "2026-06-12T07:18:06.579941Z",
+  "spec_model": "gpt-4o-mini",
+  "codegen_model": "gpt-4o",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 5,
+  "error_message": "Spec skeleton failed verification.",
+  "revision_feedback": [],
+  "source_type": "github_pr",
+  "source_ref": "https://github.com/PostHog/posthog/pull/51418",
+  "verification_mode": "verify_pr",
+  "focus_symbol": "ee/api/agentic_provisioning/views.py:_error_response",
+  "focus_language": "python"
+}

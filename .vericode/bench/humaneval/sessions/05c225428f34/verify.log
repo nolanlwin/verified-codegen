@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/05c225428f34/implementation.dfy(4,35): Error: index out of range
+  |
+4 |   if i == |prefix| then true else s[i] == prefix[i] && StartsWithAux(s, prefix, i + 1)
+  |                                    ^
+
+.vericode/bench/humaneval/sessions/05c225428f34/implementation.dfy(4,48): Error: index out of range
+  |
+4 |   if i == |prefix| then true else s[i] == prefix[i] && StartsWithAux(s, prefix, i + 1)
+  |                                                 ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

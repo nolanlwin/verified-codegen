@@ -1,0 +1,22 @@
+Implement the following Python function with verified Dafny code.
+
+
+def next_smallest(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+
+Requirements:
+- The main Dafny method must be named `next_smallest` (PascalCase `NextSmallest` is OK).
+- Define a pure recursive `function NextSmallestSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == NextSmallestSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `next_smallest`.

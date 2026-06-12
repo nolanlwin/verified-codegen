@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/9b8385dd047a/implementation.dfy(27,16): Error: index out of range
+   |
+27 |   else IsDigit(s[i]) && DigitsInRange(s, i + 1, j)
+   |                 ^
+
+.vericode/bench/humaneval/sessions/9b8385dd047a/implementation.dfy(27,37): Error: decreases expression must be bounded below by 0
+   |
+27 |   else IsDigit(s[i]) && DigitsInRange(s, i + 1, j)
+   |                                      ^
+
+.vericode/bench/humaneval/sessions/9b8385dd047a/implementation.dfy(23,14): Related location: this decreases clause was not satisfied
+   |
+23 |   decreases j - i
+   |               ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

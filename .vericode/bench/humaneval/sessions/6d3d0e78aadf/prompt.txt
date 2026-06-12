@@ -1,0 +1,26 @@
+Implement the following Python function with verified Dafny code.
+
+
+def get_closest_vowel(word):
+    """You are given a word. Your task is to find the closest vowel that stands between 
+    two consonants from the right side of the word (case sensitive).
+    
+    Vowels in the beginning and ending doesn't count. Return empty string if you didn't
+    find any vowel met the above condition. 
+
+    You may assume that the given string contains English letter only.
+
+    Example:
+    get_closest_vowel("yogurt") ==> "u"
+    get_closest_vowel("FULL") ==> "U"
+    get_closest_vowel("quick") ==> ""
+    get_closest_vowel("ab") ==> ""
+    """
+
+Requirements:
+- The main Dafny method must be named `get_closest_vowel` (PascalCase `GetClosestVowel` is OK).
+- Define a pure recursive `function GetClosestVowelSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == GetClosestVowelSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `get_closest_vowel`.

@@ -1,0 +1,22 @@
+Implement the following Python function with verified Dafny code.
+
+
+def count_up_to(n):
+    """Implement a function that takes an non-negative integer and returns an array of the first n
+    integers that are prime numbers and less than n.
+    for example:
+    count_up_to(5) => [2,3]
+    count_up_to(11) => [2,3,5,7]
+    count_up_to(0) => []
+    count_up_to(20) => [2,3,5,7,11,13,17,19]
+    count_up_to(1) => []
+    count_up_to(18) => [2,3,5,7,11,13,17]
+    """
+
+Requirements:
+- The main Dafny method must be named `count_up_to` (PascalCase `CountUpTo` is OK).
+- Define a pure recursive `function CountUpToSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == CountUpToSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `count_up_to`.

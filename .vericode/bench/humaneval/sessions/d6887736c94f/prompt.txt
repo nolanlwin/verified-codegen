@@ -1,0 +1,28 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def remove_vowels(text):
+    """
+    remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+
+Requirements:
+- The main Dafny method must be named `remove_vowels` (PascalCase `RemoveVowels` is OK).
+- Define a pure recursive `function RemoveVowelsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == RemoveVowelsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `remove_vowels`.

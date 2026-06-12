@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/5c1fc029db52/implementation.dfy(4,44): Error: decreases expression must be bounded below by 0
+  |
+4 |   if n == 0 then 0 else CarRaceCollisionSpec(n - 1) + 2 * n - 1
+  |                                             ^
+
+.vericode/bench/humaneval/sessions/5c1fc029db52/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n
+  |             ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

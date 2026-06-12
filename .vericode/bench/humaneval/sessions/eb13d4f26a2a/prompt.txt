@@ -1,0 +1,22 @@
+Implement the following Python function with verified Dafny code.
+
+
+def int_to_mini_roman(number):
+    """
+    Given a positive integer, obtain its roman numeral equivalent as a string,
+    and return it in lowercase.
+    Restrictions: 1 <= num <= 1000
+
+    Examples:
+    >>> int_to_mini_roman(19) == 'xix'
+    >>> int_to_mini_roman(152) == 'clii'
+    >>> int_to_mini_roman(426) == 'cdxxvi'
+    """
+
+Requirements:
+- The main Dafny method must be named `int_to_mini_roman` (PascalCase `IntToMiniRoman` is OK).
+- Define a pure recursive `function IntToMiniRomanSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IntToMiniRomanSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `int_to_mini_roman`.

@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/3bc57c515dfd/implementation.dfy(7,21): Error: lower bound out of range
+  |
+7 |     var m := MinSeq(s[1..]);
+  |                      ^
+
+.vericode/bench/humaneval/sessions/3bc57c515dfd/implementation.dfy(17,21): Error: lower bound out of range
+   |
+17 |     var m := MaxSeq(s[1..]);
+   |                      ^
+
+.vericode/bench/humaneval/sessions/3bc57c515dfd/implementation.dfy(27,17): Error: possible division by zero
+   |
+27 |     [(s[0] - mn) / (mx - mn)] + RescaleAux(s[1..], mn, mx)
+   |                  ^
+
+
+Dafny program verifier finished with 2 verified, 3 errors

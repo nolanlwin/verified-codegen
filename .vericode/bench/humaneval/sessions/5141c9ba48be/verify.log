@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/5141c9ba48be/implementation.dfy(12,18): Error: index out of range
+   |
+12 |     IsInteger(nums[i]) && AllIntegersFrom(nums, i + 1)
+   |                   ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

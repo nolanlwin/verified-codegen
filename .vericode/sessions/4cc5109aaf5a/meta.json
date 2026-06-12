@@ -1,0 +1,18 @@
+{
+  "session_id": "4cc5109aaf5a",
+  "status": "done_with_findings",
+  "created_at": "2026-06-12T08:15:13.351848Z",
+  "updated_at": "2026-06-12T08:15:33.792182Z",
+  "spec_model": "gpt-4o-mini",
+  "codegen_model": "gpt-4o",
+  "verified": false,
+  "verify_attempts": 0,
+  "max_verify_retries": 5,
+  "error_message": null,
+  "revision_feedback": [],
+  "source_type": "github_pr",
+  "source_ref": "https://github.com/PostHog/posthog/pull/63160",
+  "verification_mode": "verify_pr",
+  "focus_symbol": "ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts",
+  "focus_language": "python"
+}

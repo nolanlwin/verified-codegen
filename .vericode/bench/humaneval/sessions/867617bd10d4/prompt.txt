@@ -1,0 +1,18 @@
+Implement the following Python function with verified Dafny code.
+
+
+def even_odd_count(num):
+    """Given an integer. return a tuple that has the number of even and odd digits respectively.
+
+     Example:
+        even_odd_count(-12) ==> (1, 1)
+        even_odd_count(123) ==> (1, 2)
+    """
+
+Requirements:
+- The main Dafny method must be named `even_odd_count` (PascalCase `EvenOddCount` is OK).
+- Define a pure recursive `function EvenOddCountSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == EvenOddCountSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `even_odd_count`.

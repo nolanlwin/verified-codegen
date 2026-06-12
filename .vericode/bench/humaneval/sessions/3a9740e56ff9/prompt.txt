@@ -1,0 +1,26 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def fibfib(n: int):
+    """The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
+    fibfib(0) == 0
+    fibfib(1) == 0
+    fibfib(2) == 1
+    fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).
+    Please write a function to efficiently compute the n-th element of the fibfib number sequence.
+    >>> fibfib(1)
+    0
+    >>> fibfib(5)
+    4
+    >>> fibfib(8)
+    24
+    """
+
+Requirements:
+- The main Dafny method must be named `fibfib` (PascalCase `Fibfib` is OK).
+- Define a pure recursive `function FibfibSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FibfibSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `fibfib`.

@@ -1,0 +1,32 @@
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(26,24): Error: lower bound out of range
+   |
+26 |     if start < i then [s[start..i]] else []
+   |                         ^
+
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(27,24): Error: index out of range
+   |
+27 |   else if IsWhitespace(s[i]) then
+   |                         ^
+
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(28,24): Error: lower bound out of range
+   |
+28 |     if start < i then [s[start..i]] + SplitWhitespaceScan(s, i + 1, i + 1)
+   |                         ^
+
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(42,24): Error: lower bound out of range
+   |
+42 |     if start < i then [s[start..i]] else []
+   |                         ^
+
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(43,11): Error: index out of range
+   |
+43 |   else if s[i] == ',' then
+   |            ^
+
+.vericode/bench/humaneval/sessions/41bd90fe7489/implementation.dfy(44,24): Error: lower bound out of range
+   |
+44 |     if start < i then [s[start..i]] + SplitCommaScan(s, i + 1, i + 1)
+   |                         ^
+
+
+Dafny program verifier finished with 9 verified, 6 errors

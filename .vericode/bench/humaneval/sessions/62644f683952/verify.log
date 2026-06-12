@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/62644f683952/implementation.dfy(7,39): Error: decreases expression must be bounded below by 0
+  |
+7 |   else (1 + (k - 1) / 2) + TriValueSpec(k - 2) + (1 + (k + 1) / 2)
+  |                                        ^
+
+.vericode/bench/humaneval/sessions/62644f683952/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases k
+  |             ^
+
+.vericode/bench/humaneval/sessions/62644f683952/implementation.dfy(14,14): Error: decreases expression must be bounded below by 0
+   |
+14 |   else TriSpec(n - 1) + [TriValueSpec(n)]
+   |               ^
+
+.vericode/bench/humaneval/sessions/62644f683952/implementation.dfy(11,12): Related location: this decreases clause was not satisfied
+   |
+11 |   decreases n
+   |             ^
+
+
+Dafny program verifier finished with 1 verified, 2 errors

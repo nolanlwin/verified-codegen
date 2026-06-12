@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/982a47695ae3/implementation.dfy(7,11): Error: index out of range
+  |
+7 |     (if lst[i] == value then 1 else 0) + CountFrom(lst, value, i + 1)
+  |            ^
+
+
+Dafny program verifier finished with 4 verified, 1 error

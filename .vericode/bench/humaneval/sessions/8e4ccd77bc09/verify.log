@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/8e4ccd77bc09/implementation.dfy(22,21): Error: index out of range
+   |
+22 |   else if IsPrime(lst[i]) && lst[i] > current then MaxPrimeAux(lst, i + 1, lst[i])
+   |                      ^
+
+
+Dafny program verifier finished with 8 verified, 1 error

@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/6e3480f73e0e/implementation.dfy(7,27): Error: lower bound out of range
+  |
+7 |     var tailMin := MinSeq(s[1..]);
+  |                            ^
+
+
+Dafny program verifier finished with 4 verified, 1 error

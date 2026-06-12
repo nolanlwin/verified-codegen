@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/7954499db8df/implementation.dfy(14,31): Error: possible division by zero
+   |
+14 |     ((rowWater + capacity - 1) / capacity) + MaxFillSpec(grid[1..], capacity)
+   |                                ^
+
+
+Dafny program verifier finished with 5 verified, 1 error

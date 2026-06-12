@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/256af8a01261/implementation.dfy(20,34): Error: possible division by zero
+   |
+20 |   var mean := SumRealSeq(numbers) / (|numbers| as real);
+   |                                   ^
+
+
+Dafny program verifier finished with 3 verified, 1 error

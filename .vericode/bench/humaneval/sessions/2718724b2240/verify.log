@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/2718724b2240/implementation.dfy(12,17): Error: possible division by zero
+   |
+12 |   var q := numer / denom;
+   |                  ^
+
+
+Dafny program verifier finished with 7 verified, 1 error

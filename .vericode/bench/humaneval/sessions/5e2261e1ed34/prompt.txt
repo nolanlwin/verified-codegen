@@ -1,0 +1,25 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def sum_to_n(n: int):
+    """sum_to_n is a function that sums numbers from 1 to n.
+    >>> sum_to_n(30)
+    465
+    >>> sum_to_n(100)
+    5050
+    >>> sum_to_n(5)
+    15
+    >>> sum_to_n(10)
+    55
+    >>> sum_to_n(1)
+    1
+    """
+
+Requirements:
+- The main Dafny method must be named `sum_to_n` (PascalCase `SumToN` is OK).
+- Define a pure recursive `function SumToNSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SumToNSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `sum_to_n`.

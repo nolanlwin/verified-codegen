@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/215487cd56d2/implementation.dfy(18,22): Error: index out of range
+   |
+18 |     RowMatchesSpec(lst[i], x, i, |lst[i]|) + GetRowFromSpec(lst, x, i + 1)
+   |                       ^
+
+
+Dafny program verifier finished with 4 verified, 1 error

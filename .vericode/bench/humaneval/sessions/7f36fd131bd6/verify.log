@@ -1,0 +1,22 @@
+.vericode/bench/humaneval/sessions/7f36fd131bd6/implementation.dfy(4,41): Error: decreases expression must be bounded below by 0
+  |
+4 |   if n == 0 then 1 else n * FactorialSpec(n - 1)
+  |                                          ^
+
+.vericode/bench/humaneval/sessions/7f36fd131bd6/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n
+  |             ^
+
+.vericode/bench/humaneval/sessions/7f36fd131bd6/implementation.dfy(10,63): Error: decreases expression must be bounded below by 0
+   |
+10 |   if n == 1 then 1 else FactorialSpec(n) * SpecialFactorialSpec(n - 1)
+   |                                                                ^
+
+.vericode/bench/humaneval/sessions/7f36fd131bd6/implementation.dfy(8,12): Related location: this decreases clause was not satisfied
+  |
+8 |   decreases n
+  |             ^
+
+
+Dafny program verifier finished with 2 verified, 2 errors

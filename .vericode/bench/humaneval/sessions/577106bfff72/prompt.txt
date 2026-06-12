@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+def cycpattern_check(a , b):
+    """You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word
+    cycpattern_check("abcd","abd") => False
+    cycpattern_check("hello","ell") => True
+    cycpattern_check("whassup","psus") => False
+    cycpattern_check("abab","baa") => True
+    cycpattern_check("efef","eeff") => False
+    cycpattern_check("himenss","simen") => True
+
+    """
+
+Requirements:
+- The main Dafny method must be named `cycpattern_check` (PascalCase `CycpatternCheck` is OK).
+- Define a pure recursive `function CycpatternCheckSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == CycpatternCheckSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `cycpattern_check`.

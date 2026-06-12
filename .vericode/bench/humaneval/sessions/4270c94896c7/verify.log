@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/4270c94896c7/implementation.dfy(4,53): Error: decreases expression must be bounded below by 0
+  |
+4 |   if n == 0 then 0 else if n == 1 then 1 else FibSpec(n - 1) + FibSpec(n - 2)
+  |                                                      ^
+
+.vericode/bench/humaneval/sessions/4270c94896c7/implementation.dfy(2,12): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n
+  |             ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

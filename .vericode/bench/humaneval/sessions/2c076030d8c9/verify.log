@@ -1,0 +1,27 @@
+.vericode/bench/humaneval/sessions/2c076030d8c9/implementation.dfy(10,28): Error: index out of range
+   |
+10 |   else if i % 2 == 0 then [s[i]] + ExtractEvenValuesAux(s, i + 1)
+   |                             ^
+
+.vericode/bench/humaneval/sessions/2c076030d8c9/implementation.dfy(11,27): Error: decreases expression must be bounded below by 0
+   |
+11 |   else ExtractEvenValuesAux(s, i + 1)
+   |                            ^
+
+.vericode/bench/humaneval/sessions/2c076030d8c9/implementation.dfy(7,16): Related location: this decreases clause was not satisfied
+  |
+7 |   decreases |s| - i
+  |                 ^
+
+.vericode/bench/humaneval/sessions/2c076030d8c9/implementation.dfy(39,60): Error: index out of range
+   |
+39 |     [SeqNthOrDefault(SortSeq(ExtractEvenValues(l)), i / 2, l[i])] + SortEvenSpec(l, i + 1)
+   |                                                             ^
+
+.vericode/bench/humaneval/sessions/2c076030d8c9/implementation.dfy(41,6): Error: index out of range
+   |
+41 |     [l[i]] + SortEvenSpec(l, i + 1)
+   |       ^
+
+
+Dafny program verifier finished with 5 verified, 4 errors

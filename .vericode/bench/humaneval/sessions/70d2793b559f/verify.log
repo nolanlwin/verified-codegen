@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/70d2793b559f/implementation.dfy(6,12): Error: possible division by zero
+  |
+6 |   else if n % d == 0 then [d] + FactorizeSpec(n / d, d)
+  |             ^
+
+.vericode/bench/humaneval/sessions/70d2793b559f/implementation.dfy(6,45): Error: decreases clause might not decrease
+  |
+6 |   else if n % d == 0 then [d] + FactorizeSpec(n / d, d)
+  |                                              ^
+
+
+Dafny program verifier finished with 1 verified, 2 errors

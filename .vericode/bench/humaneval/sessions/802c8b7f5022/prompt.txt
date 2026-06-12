@@ -1,0 +1,18 @@
+Implement the following Python function with verified Dafny code.
+
+
+def add(lst):
+    """Given a non-empty list of integers lst. add the even elements that are at odd indices..
+
+
+    Examples:
+        add([4, 2, 6, 7]) ==> 2 
+    """
+
+Requirements:
+- The main Dafny method must be named `add` (PascalCase `Add` is OK).
+- Define a pure recursive `function AddSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == AddSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `add`.

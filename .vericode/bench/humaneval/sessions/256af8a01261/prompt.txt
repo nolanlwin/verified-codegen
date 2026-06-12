@@ -1,0 +1,22 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def mean_absolute_deviation(numbers: List[float]) -> float:
+    """ For a given list of input numbers, calculate Mean Absolute Deviation
+    around the mean of this dataset.
+    Mean Absolute Deviation is the average absolute difference between each
+    element and a centerpoint (mean in this case):
+    MAD = average | x - x_mean |
+    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])
+    1.0
+    """
+
+Requirements:
+- The main Dafny method must be named `mean_absolute_deviation` (PascalCase `MeanAbsoluteDeviation` is OK).
+- Define a pure recursive `function MeanAbsoluteDeviationSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == MeanAbsoluteDeviationSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `mean_absolute_deviation`.

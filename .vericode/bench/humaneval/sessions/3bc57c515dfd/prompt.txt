@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    """ Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    """
+
+Requirements:
+- The main Dafny method must be named `rescale_to_unit` (PascalCase `RescaleToUnit` is OK).
+- Define a pure recursive `function RescaleToUnitSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == RescaleToUnitSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `rescale_to_unit`.

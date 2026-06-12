@@ -1,0 +1,21 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def fizz_buzz(n: int):
+    """Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.
+    >>> fizz_buzz(50)
+    0
+    >>> fizz_buzz(78)
+    2
+    >>> fizz_buzz(79)
+    3
+    """
+
+Requirements:
+- The main Dafny method must be named `fizz_buzz` (PascalCase `FizzBuzz` is OK).
+- Define a pure recursive `function FizzBuzzSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == FizzBuzzSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `fizz_buzz`.

@@ -1,0 +1,42 @@
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(4,34): Error: index out of range
+  |
+4 |   if i == |s| then true else 0 < s[i] && AllPositiveSpec(s, i + 1)
+  |                                   ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(14,33): Error: index out of range
+   |
+14 |   if i == 0 then s[0] * s[0] == s[1] * s[1] + s[2] * s[2]
+   |                                  ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(14,47): Error: index out of range
+   |
+14 |   if i == 0 then s[0] * s[0] == s[1] * s[1] + s[2] * s[2]
+   |                                                ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(15,23): Error: index out of range
+   |
+15 |   else if i == 1 then s[1] * s[1] == s[0] * s[0] + s[2] * s[2]
+   |                        ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(15,52): Error: index out of range
+   |
+15 |   else if i == 1 then s[1] * s[1] == s[0] * s[0] + s[2] * s[2]
+   |                                                     ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(16,8): Error: index out of range
+   |
+16 |   else s[2] * s[2] == s[0] * s[0] + s[1] * s[1]
+   |         ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(22,86): Error: decreases expression must be bounded below by 0
+   |
+22 |   if i == 3 then false else PythagoreanAtSpec(s, i) || ExistsPythagoreanHypotenuseSpec(s, i + 1)
+   |                                                                                       ^
+
+.vericode/bench/humaneval/sessions/0082cfbb02fd/implementation.dfy(20,14): Related location: this decreases clause was not satisfied
+   |
+20 |   decreases 3 - i
+   |               ^
+
+
+Dafny program verifier finished with 1 verified, 7 errors

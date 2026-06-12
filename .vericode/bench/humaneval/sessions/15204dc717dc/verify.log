@@ -1,0 +1,6 @@
+.vericode/bench/humaneval/sessions/15204dc717dc/implementation.dfy(9,5): Error: quantifiers in non-ghost contexts must be compilable, but Dafny's heuristics can't figure out how to produce or compile a bounded set of values for 'x'
+  |
+9 |   if exists x: real :: PolySpec(xs, x) == 0.0 then
+  |      ^^^^^^
+
+1 resolution/type errors detected in implementation.dfy

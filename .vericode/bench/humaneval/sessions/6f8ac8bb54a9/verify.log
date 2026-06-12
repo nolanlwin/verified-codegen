@@ -1,0 +1,7 @@
+.vericode/bench/humaneval/sessions/6f8ac8bb54a9/implementation.dfy(7,35): Error: lower bound out of range
+  |
+7 |     var tailMax := MaxElementSpec(l[1..]);
+  |                                    ^
+
+
+Dafny program verifier finished with 1 verified, 1 error

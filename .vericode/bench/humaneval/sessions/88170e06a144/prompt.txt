@@ -1,0 +1,24 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def is_palindrome(text: str):
+    """
+    Checks if given string is a palindrome
+    >>> is_palindrome('')
+    True
+    >>> is_palindrome('aba')
+    True
+    >>> is_palindrome('aaaaa')
+    True
+    >>> is_palindrome('zbcd')
+    False
+    """
+
+Requirements:
+- The main Dafny method must be named `is_palindrome` (PascalCase `IsPalindrome` is OK).
+- Define a pure recursive `function IsPalindromeSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == IsPalindromeSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `is_palindrome`.

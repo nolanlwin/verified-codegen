@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+
+def greatest_common_divisor(a: int, b: int) -> int:
+    """ Return a greatest common divisor of two integers a and b
+    >>> greatest_common_divisor(3, 5)
+    1
+    >>> greatest_common_divisor(25, 15)
+    5
+    """
+
+Requirements:
+- The main Dafny method must be named `greatest_common_divisor` (PascalCase `GreatestCommonDivisor` is OK).
+- Define a pure recursive `function GreatestCommonDivisorSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == GreatestCommonDivisorSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `greatest_common_divisor`.

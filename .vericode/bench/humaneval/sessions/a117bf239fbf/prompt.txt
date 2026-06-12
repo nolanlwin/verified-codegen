@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+
+def digits(n):
+    """Given a positive integer n, return the product of the odd digits.
+    Return 0 if all digits are even.
+    For example:
+    digits(1)  == 1
+    digits(4)  == 0
+    digits(235) == 15
+    """
+
+Requirements:
+- The main Dafny method must be named `digits` (PascalCase `Digits` is OK).
+- Define a pure recursive `function DigitsSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == DigitsSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `digits`.

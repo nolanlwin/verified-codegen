@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/577106bfff72/implementation.dfy(6,11): Error: lower bound out of range
+  |
+6 |   else if a[i..i + |pattern|] == pattern then true
+  |            ^
+
+.vericode/bench/humaneval/sessions/577106bfff72/implementation.dfy(19,27): Error: lower bound out of range
+   |
+19 |   else if ContainsSpec(a, b[k..] + b[..k]) then true
+   |                            ^
+
+
+Dafny program verifier finished with 4 verified, 2 errors

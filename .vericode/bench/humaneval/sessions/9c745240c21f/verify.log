@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/9c745240c21f/implementation.dfy(5,12): Error: possible division by zero
+  |
+5 |   else if n % d == 0 then false
+  |             ^
+
+.vericode/bench/humaneval/sessions/9c745240c21f/implementation.dfy(6,21): Error: decreases expression must be bounded below by 0
+  |
+6 |   else NoDivisorsSpec(n, d + 1)
+  |                      ^
+
+.vericode/bench/humaneval/sessions/9c745240c21f/implementation.dfy(2,14): Related location: this decreases clause was not satisfied
+  |
+2 |   decreases n - d
+  |               ^
+
+
+Dafny program verifier finished with 3 verified, 2 errors

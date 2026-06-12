@@ -1,0 +1,37 @@
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(4,29): Error: possible division by zero
+  |
+4 |   if d >= n then true else n % d != 0 && NoDivisorFrom(n, d + 1)
+  |                              ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(16,99): Error: decreases expression must be bounded below by 0
+   |
+16 |   else (IsPrimeSpec(x) && IsPrimeSpec(y) && IsPrimeSpec(z) && x * y * z == a) || ExistsPrimeFactorZ(a, x, y, z + 1)
+   |                                                                                                    ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(13,16): Related location: this decreases clause was not satisfied
+   |
+13 |   decreases 100 - z
+   |                 ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(23,59): Error: decreases expression must be bounded below by 0
+   |
+23 |   else ExistsPrimeFactorZ(a, x, y, 2) || ExistsPrimeFactorY(a, x, y + 1)
+   |                                                            ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(20,16): Related location: this decreases clause was not satisfied
+   |
+20 |   decreases 100 - y
+   |                 ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(30,56): Error: decreases expression must be bounded below by 0
+   |
+30 |   else ExistsPrimeFactorY(a, x, 2) || ExistsPrimeFactorX(a, x + 1)
+   |                                                         ^
+
+.vericode/bench/humaneval/sessions/dc0a9619891f/implementation.dfy(27,16): Related location: this decreases clause was not satisfied
+   |
+27 |   decreases 100 - x
+   |                 ^
+
+
+Dafny program verifier finished with 6 verified, 4 errors

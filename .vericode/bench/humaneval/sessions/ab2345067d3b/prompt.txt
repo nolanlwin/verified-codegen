@@ -1,0 +1,22 @@
+Implement the following Python function with verified Dafny code.
+
+
+def solve(s):
+    """You are given a string s.
+    if s[i] is a letter, reverse its case from lower to upper or vise versa, 
+    otherwise keep it as it is.
+    If the string contains no letters, reverse the string.
+    The function should return the resulted string.
+    Examples
+    solve("1234") = "4321"
+    solve("ab") = "AB"
+    solve("#a@C") = "#A@c"
+    """
+
+Requirements:
+- The main Dafny method must be named `solve` (PascalCase `Solve` is OK).
+- Define a pure recursive `function SolveSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == SolveSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `solve`.

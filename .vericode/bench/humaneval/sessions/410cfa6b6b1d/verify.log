@@ -1,0 +1,12 @@
+.vericode/bench/humaneval/sessions/410cfa6b6b1d/implementation.dfy(26,25): Error: decreases expression must be bounded below by 0
+   |
+26 |   else StringSequenceSpec(n - 1) + " " + NatToStringSpec(n)
+   |                          ^
+
+.vericode/bench/humaneval/sessions/410cfa6b6b1d/implementation.dfy(23,12): Related location: this decreases clause was not satisfied
+   |
+23 |   decreases n
+   |             ^
+
+
+Dafny program verifier finished with 2 verified, 1 error

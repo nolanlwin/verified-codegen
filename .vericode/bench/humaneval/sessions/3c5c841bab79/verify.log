@@ -1,0 +1,17 @@
+.vericode/bench/humaneval/sessions/3c5c841bab79/implementation.dfy(12,30): Error: decreases clause might not decrease
+   |
+12 |   else (n % 2) + CountOnesSpec(n / 2)
+   |                               ^
+
+.vericode/bench/humaneval/sessions/3c5c841bab79/implementation.dfy(12,30): Error: decreases expression must be bounded below by 0
+   |
+12 |   else (n % 2) + CountOnesSpec(n / 2)
+   |                               ^
+
+.vericode/bench/humaneval/sessions/3c5c841bab79/implementation.dfy(9,12): Related location: this decreases clause was not satisfied
+  |
+9 |   decreases n
+  |             ^
+
+
+Dafny program verifier finished with 4 verified, 2 errors

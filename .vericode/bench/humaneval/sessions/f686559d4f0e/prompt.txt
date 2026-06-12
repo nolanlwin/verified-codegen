@@ -1,0 +1,20 @@
+Implement the following Python function with verified Dafny code.
+
+
+def circular_shift(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    """
+
+Requirements:
+- The main Dafny method must be named `circular_shift` (PascalCase `CircularShift` is OK).
+- Define a pure recursive `function CircularShiftSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == CircularShiftSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `circular_shift`.

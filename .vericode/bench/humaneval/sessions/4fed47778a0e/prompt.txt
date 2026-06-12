@@ -1,0 +1,19 @@
+Implement the following Python function with verified Dafny code.
+
+from typing import List
+
+
+def string_xor(a: str, b: str) -> str:
+    """ Input are two strings a and b consisting only of 1s and 0s.
+    Perform binary XOR on these inputs and return result also as a string.
+    >>> string_xor('010', '110')
+    '100'
+    """
+
+Requirements:
+- The main Dafny method must be named `string_xor` (PascalCase `StringXor` is OK).
+- Define a pure recursive `function StringXorSpec(...)` for semantics.
+- Put postconditions on the method only: `ensures result == StringXorSpec(...)`.
+- No while loops inside functions; no ensures on functions.
+- Method body must be `{ assume false; }` only.
+- Compiled Python will be tested as `string_xor`.
