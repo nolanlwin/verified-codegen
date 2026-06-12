@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dafny
+        run: |
+          wget -q https://github.com/dafny-lang/dafny/releases/download/v4.9.1/dafny-4.9.1-x64-ubuntu-20.04.zip
+          unzip -q dafny-4.9.1-x64-ubuntu-20.04.zip
+          echo "$PWD/dafny/dafny" >> $GITHUB_PATH
+
+      - name: Install package
+        run: pip install -e ".[dev]"
+
+      - name: Run unit tests (no OpenAI)
+        run: pytest tests/ -v --ignore=tests/test_golden_path.py -k "not golden"
+        env:
+          OPENAI_API_KEY: ""
+
+      - name: PR fixture ingest tests
+        run: pytest tests/test_pr_ingest.py tests/test_pr_pipeline_mocked.py -v

@@ -1,0 +1,35 @@
+{
+  "repo": "PostHog/posthog",
+  "focus": "ee/hogai/chat_agent/prompt_builder.py:_slack_response_style_prompts",
+  "pr": {
+    "number": 63160,
+    "title": "feat(llma): make PostHog AI concise when replying in Slack",
+    "body": "Adds a Slack-only response-style block when slack_thread_context is in the run config.",
+    "author": "timgl",
+    "url": "https://github.com/PostHog/posthog/pull/63160",
+    "base_sha": "aaa",
+    "head_sha": "bbb"
+  },
+  "files": [
+    {
+      "path": "ee/hogai/chat_agent/prompt_builder.py",
+      "language": "python",
+      "patch": "",
+      "after": "def _slack_response_style_prompts(config: RunnableConfig) -> list[str]:\n    if (config.get(\"configurable\") or {}).get(\"slack_thread_context\") is not None:\n        return [SLACK_RESPONSE_STYLE_PROMPT]\n    return []\n"
+    },
+    {
+      "path": "ee/hogai/chat_agent/prompts/base.py",
+      "language": "python",
+      "patch": "",
+      "after": "SLACK_RESPONSE_STYLE_PROMPT = \"\"\"\n<slack_response_style>\nYou are responding in a Slack thread, not the PostHog web app.\n</slack_response_style>\n\"\"\".strip()\n"
+    },
+    {
+      "path": "ee/hogai/chat_agent/test/test_mode_manager.py",
+      "language": "python",
+      "patch": "",
+      "after": "async def test_prompt_builder_includes_slack_response_style_only_from_slack(self):\n    if should_contain:\n        self.assertIn(\"responding in a Slack thread\", system_prompt)\n    else:\n        self.assertNotIn(\"responding in a Slack thread\", system_prompt)\n"
+    }
+  ],
+  "comments": [],
+  "review_comments": []
+}

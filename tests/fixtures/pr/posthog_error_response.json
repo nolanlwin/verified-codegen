@@ -1,0 +1,20 @@
+{
+  "repo": "PostHog/posthog",
+  "focus": "ee/api/agentic_provisioning/views.py:_error_response",
+  "pr": {
+    "number": 51418,
+    "title": "fix: add error logging to agentic provisioning endpoints",
+    "body": "Added logger.warning to _error_response so all error responses from provisioning endpoints are logged. We need production logs to diagnose 401s.",
+    "author": "MattBro",
+    "url": "https://github.com/PostHog/posthog/pull/51418"
+  },
+  "files": [
+    {
+      "path": "ee/api/agentic_provisioning/views.py",
+      "language": "python",
+      "after": "from rest_framework.response import Response\nimport structlog\nlogger = structlog.get_logger(__name__)\n\ndef _error_response(code: str, message: str, resource_id: str = \"\", status: int = 400) -> Response:\n    logger.warning(\"stripe_app.error_response\", code=code, message=message, resource_id=resource_id, status=status)\n    return Response({\"status\": \"error\", \"id\": resource_id, \"error\": {\"code\": code, \"message\": message}}, status=status)\n"
+    }
+  ],
+  "comments": [],
+  "review_comments": []
+}

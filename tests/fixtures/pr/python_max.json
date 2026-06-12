@@ -1,0 +1,30 @@
+{
+  "repo": "acme/demo",
+  "focus": "src/math_utils.py:max_of_two",
+  "pr": {
+    "number": 42,
+    "title": "Add max_of_two helper",
+    "body": "Returns the larger of two integers. For equal inputs, return either value.",
+    "author": "dev1",
+    "url": "https://github.com/acme/demo/pull/42",
+    "base_sha": "aaa",
+    "head_sha": "bbb"
+  },
+  "files": [
+    {
+      "path": "src/math_utils.py",
+      "language": "python",
+      "patch": "@@ -0,0 +1,4 @@\n+def max_of_two(a: int, b: int) -> int:\n+    if a >= b:\n+        return a\n+    return b\n",
+      "after": "def max_of_two(a: int, b: int) -> int:\n    if a >= b:\n        return a\n    return b\n"
+    }
+  ],
+  "comments": [],
+  "review_comments": [
+    {
+      "author": "reviewer",
+      "body": "Please ensure equal inputs are handled.",
+      "path": "src/math_utils.py",
+      "line": 1
+    }
+  ]
+}

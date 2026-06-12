@@ -1,0 +1,21 @@
+{
+  "repo": "acme/web",
+  "focus": "src/sum.ts:sumArray",
+  "pr": {
+    "number": 7,
+    "title": "Add sumArray",
+    "body": "Sum all numbers in an array. Empty array returns 0.",
+    "author": "dev2",
+    "url": "https://github.com/acme/web/pull/7"
+  },
+  "files": [
+    {
+      "path": "src/sum.ts",
+      "language": "typescript",
+      "patch": "@@ -0,0 +1,6 @@\n+export function sumArray(nums: number[]): number {\n+  let total = 0;\n+  for (let i = 0; i < nums.length; i++) {\n+    total += nums[i];\n+  }\n+  return total;\n+}\n",
+      "after": "export function sumArray(nums: number[]): number {\n  let total = 0;\n  for (let i = 0; i < nums.length; i++) {\n    total += nums[i];\n  }\n  return total;\n}\n"
+    }
+  ],
+  "comments": [],
+  "review_comments": []
+}

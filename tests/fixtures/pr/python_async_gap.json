@@ -1,0 +1,20 @@
+{
+  "repo": "acme/demo",
+  "focus": "src/fetcher.py:fetch_data",
+  "pr": {
+    "number": 99,
+    "title": "Async fetch",
+    "body": "Fetch remote data",
+    "author": "dev3",
+    "url": "https://github.com/acme/demo/pull/99"
+  },
+  "files": [
+    {
+      "path": "src/fetcher.py",
+      "language": "python",
+      "after": "async def fetch_data(url: str) -> str:\n    import httpx\n    resp = await httpx.get(url)\n    return resp.text\n"
+    }
+  ],
+  "comments": [],
+  "review_comments": []
+}

@@ -1,0 +1,41 @@
+name: Vericode PR Verification
+description: Run vericode pr on a pull request and post a critique comment
+inputs:
+  focus:
+    description: Scoped symbol path:symbol (optional; auto-picks when omitted)
+    required: false
+    default: ""
+  vericode-version:
+    description: pip install spec for vericode (e.g. . or vericode==0.1.0)
+    required: false
+    default: "."
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    - name: Install Dafny
+      shell: bash
+      run: |
+        wget -q https://github.com/dafny-lang/dafny/releases/download/v4.9.1/dafny-4.9.1-x64-ubuntu-20.04.zip
+        unzip -q dafny-4.9.1-x64-ubuntu-20.04.zip
+        echo "$PWD/dafny" >> $GITHUB_PATH
+    - name: Install vericode
+      shell: bash
+      run: pip install "${{ inputs.vericode-version }}"
+    - name: Run vericode pr
+      shell: bash
+      env:
+        OPENAI_API_KEY: ${{ env.OPENAI_API_KEY }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        FOCUS_ARG=""
+        if [ -n "${{ inputs.focus }}" ]; then
+          FOCUS_ARG="--focus ${{ inputs.focus }}"
+        fi
+        vericode pr "${{ github.event.pull_request.html_url }}" $FOCUS_ARG --auto --skip-run || true
+        SESSION=$(vericode list | head -n 4 | tail -n 1 | awk '{print $1}')
+        if [ -f ".vericode/sessions/$SESSION/critique.md" ]; then
+          gh pr comment "${{ github.event.pull_request.number }}" --body-file ".vericode/sessions/$SESSION/critique.md"
+        fi
